@@ -1,0 +1,433 @@
+---
+const useCases = [
+	{
+		icon: 'monitor',
+		category: 'SaaS & Software',
+		title: 'Recurring Software Licenses Made Simple',
+		description:
+			'Power your SaaS business with automated billing cycles, instant license provisioning, and seamless upgrade paths. Handle monthly, yearly, or custom billing periods effortlessly.',
+		benefits: [
+			'Automatic license key generation and delivery',
+			'Instant upgrades and downgrades',
+			'Usage-based billing support',
+			'API integration for seamless activation',
+		],
+		colorFrom: '#093865',
+		colorTo: '#0B4A7D',
+		stats: { metric: '99.8%', label: 'Renewal Success Rate' },
+		plan: {
+			name: 'Pro Plan - Monthly',
+			price: '$99',
+			billing: '/month',
+			durationValue: '12',
+			durationLabel: 'months active',
+		},
+	},
+	{
+		icon: 'grad',
+		category: 'Online Learning',
+		title: 'Membership Sites & Course Subscriptions',
+		description:
+			'Build thriving learning communities with flexible membership tiers, drip content scheduling, and automated access control. Perfect for online courses, coaching programs, and educational platforms.',
+		benefits: [
+			'Content drip scheduling by subscription tier',
+			'Student progress tracking integration',
+			'Multiple membership level management',
+			'Automated enrollment and access control',
+		],
+		colorFrom: '#13B8A6',
+		colorTo: '#0D9488',
+		stats: { metric: '3.2x', label: 'Average Customer LTV' },
+		plan: {
+			name: 'Premium Access - Yearly',
+			price: '$499',
+			billing: '/year',
+			durationValue: '2',
+			durationLabel: 'years active',
+		},
+	},
+	{
+		icon: 'dumbbell',
+		category: 'Fitness & Wellness',
+		title: 'Gym & Studio Membership Management',
+		description:
+			'Streamline your fitness business with automated class bookings, flexible membership packages, and family plan options. Support for unlimited classes, punch cards, and hybrid models.',
+		benefits: [
+			'Family and group membership plans',
+			'Automatic class booking confirmations',
+			'Freeze and pause membership options',
+			'Integration with booking systems',
+		],
+		colorFrom: '#90D144',
+		colorTo: '#7BC135',
+		stats: { metric: '40%', label: 'Reduction in Churn' },
+		plan: {
+			name: 'Unlimited Classes - Monthly',
+			price: '$79',
+			billing: '/month',
+			durationValue: '8',
+			durationLabel: 'months active',
+		},
+	},
+	{
+		icon: 'package',
+		category: 'Subscription Commerce',
+		title: 'Monthly Box & Product Subscriptions',
+		description:
+			'Delight customers with curated product boxes delivered on schedule. Manage inventory forecasting, shipping preferences, and surprise upgrades with powerful subscription tools.',
+		benefits: [
+			'Shipping date customization per customer',
+			'Product variant swapping between deliveries',
+			'Prepaid subscription bundles (3, 6, 12 months)',
+			'Gift subscription management',
+		],
+		colorFrom: '#093865',
+		colorTo: '#13B8A6',
+		stats: { metric: '85%', label: 'Customer Retention' },
+		plan: {
+			name: 'Monthly Box - Recurring',
+			price: '$49',
+			billing: '/month',
+			durationValue: '6',
+			durationLabel: 'months active',
+		},
+	},
+];
+
+const iconSvg = (type, className) => {
+	if (type === 'monitor') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><line x1="8" y1="20" x2="16" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line></svg>`;
+	}
+	if (type === 'grad') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 6 2 10l10 4 10-4z"></path><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"></path></svg>`;
+	}
+	if (type === 'dumbbell') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"></path><path d="M3 10a1 1 0 0 1 0-2h2.5"></path><path d="M18.5 16.5H21a1 1 0 0 1 0 2h-2.5"></path><path d="M3 14a1 1 0 0 1 0-2h2.5"></path><path d="M18.5 7.5H21a1 1 0 0 1 0 2h-2.5"></path><path d="M8 4a2 2 0 0 1 2-2h1"></path><path d="M13 20h1a2 2 0 0 0 2-2"></path></svg>`;
+	}
+	return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10"></path><path d="m7 17 10-10"></path><rect x="3" y="5" width="18" height="14" rx="2"></rect></svg>`;
+};
+---
+
+<section data-usecases class="relative py-24 lg:py-32 overflow-hidden bg-[#093865]">
+	<div class="absolute inset-0 opacity-10">
+		<div
+			class="absolute inset-0"
+			style="background-image: linear-gradient(rgba(144, 209, 68, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(144, 209, 68, 0.1) 1px, transparent 1px); background-size: 50px 50px;"
+		></div>
+	</div>
+
+	<div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#90D144]/10 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-[#13B8A6]/10 rounded-full blur-3xl"></div>
+
+	<div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-16 lg:mb-20" data-animate="fade-up">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#90D144]/10 border border-[#90D144]/20 mb-6">
+				<div class="w-2 h-2 rounded-full bg-[#90D144] animate-pulse"></div>
+				<span class="text-sm font-semibold text-[#90D144]">BUILT FOR YOUR INDUSTRY</span>
+			</div>
+			<h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+				Perfect for Every
+				<span class="block mt-2 bg-gradient-to-r from-[#90D144] to-[#13B8A6] bg-clip-text text-transparent">
+					Subscription Business
+				</span>
+			</h2>
+			<p class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed">
+				Whether you're selling software, memberships, or monthly boxes - Recurio adapts to your business model.
+			</p>
+		</div>
+
+		<div class="grid lg:grid-cols-4 gap-4 mb-8">
+			{useCases.map((useCase, idx) => (
+				<button
+					type="button"
+					data-tab
+					data-index={idx}
+					data-active={idx === 0 ? 'true' : 'false'}
+					class="usecase-tab group relative p-6 rounded-2xl transition-all duration-500 text-left"
+					style={`transition-delay: ${idx * 100}ms;`}
+				>
+					<div class="flex flex-col items-center text-center gap-3">
+						<div class={`usecase-icon w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-500 ${useCase.iconBg ?? 'bg-white/10'}`}>
+							<span class="inline-flex" set:html={iconSvg(useCase.icon, 'w-7 h-7 transition-colors duration-500')}></span>
+						</div>
+						<span class="usecase-label font-bold text-sm transition-colors duration-300">
+							{useCase.category}
+						</span>
+					</div>
+					<div class="usecase-underline absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#90D144] to-[#13B8A6] rounded-b-2xl"></div>
+				</button>
+			))}
+		</div>
+
+		<div class="relative">
+			{useCases.map((useCase, idx) => (
+				<div data-panel data-index={idx} data-active={idx === 0 ? 'true' : 'false'} class="usecase-panel transition-all duration-700">
+					<div class="bg-white rounded-3xl overflow-hidden shadow-2xl">
+						<div class="grid lg:grid-cols-2 gap-0">
+							<div class="p-10 lg:p-12 flex flex-col justify-center">
+								<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#90D144]/20 mb-6 self-start">
+									<span class="text-xs font-bold text-[#093865]">{useCase.category}</span>
+								</div>
+
+								<h3 class="text-3xl lg:text-4xl font-bold text-[#093865] mb-6 leading-tight">
+									{useCase.title}
+								</h3>
+
+								<p class="text-lg text-gray-600 leading-relaxed mb-8">
+									{useCase.description}
+								</p>
+
+								<div class="space-y-4 mb-8">
+									{useCase.benefits.map((benefit) => (
+										<div class="flex items-start gap-3 group/benefit">
+											<div class="flex-shrink-0 mt-0.5">
+												<svg viewBox="0 0 24 24" class="w-5 h-5 text-[#90D144]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+													<path d="M20 6 9 17l-5-5"></path>
+												</svg>
+											</div>
+											<span class="text-gray-700 group-hover/benefit:text-[#093865] transition-colors">
+												{benefit}
+											</span>
+										</div>
+									))}
+								</div>
+
+								<div class="flex items-center gap-4 pt-6 border-t border-gray-100">
+									<div>
+										<div class="text-3xl font-bold text-[#90D144]">
+											{useCase.stats.metric}
+										</div>
+										<div class="text-sm text-gray-600">{useCase.stats.label}</div>
+									</div>
+									<div class="flex-1 h-px bg-gradient-to-r from-[#90D144]/20 to-transparent"></div>
+									<button class="group/btn inline-flex items-center gap-2 text-[#093865] hover:text-[#90D144] font-semibold transition-colors">
+										<span>View Details</span>
+										<svg viewBox="0 0 24 24" class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M5 12h14"></path>
+											<path d="m13 5 7 7-7 7"></path>
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<div class="relative p-10 lg:p-12 flex items-center justify-center bg-white rounded-3xl overflow-hidden">
+								<div class="absolute inset-0 opacity-10">
+									<div
+										class="absolute inset-0"
+										style="background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px); background-size: 24px 24px;"
+									></div>
+								</div>
+
+								<div class="relative w-full max-w-md">
+									<div class="bg-white/95 backdrop-blur rounded-2xl p-8 shadow-2xl">
+										<div class="space-y-6">
+											<div class="flex items-center justify-between pb-4 border-b border-gray-200">
+												<div class="flex items-center gap-3">
+													<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#90D144] to-[#13B8A6] flex items-center justify-center">
+														<span class="inline-flex" set:html={iconSvg(useCase.icon, 'w-6 h-6 text-white')}></span>
+													</div>
+													<div>
+														<div class="font-bold text-[#093865]">Active Subscription</div>
+														<div class="text-sm text-gray-500">{useCase.plan.name}</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="grid grid-cols-2 gap-4">
+												<div class="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-4">
+													<div class="text-2xl font-bold text-[#093865]">{useCase.plan.price}</div>
+													<div class="text-xs text-gray-600">{useCase.plan.billing}</div>
+												</div>
+												<div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-4">
+													<div class="text-2xl font-bold text-[#90D144]">{useCase.plan.durationValue}</div>
+													<div class="text-xs text-gray-600">{useCase.plan.durationLabel}</div>
+												</div>
+											</div>
+
+											<div class="space-y-3">
+												<div class="flex items-center justify-between text-sm">
+													<span class="text-gray-600">Next Billing</span>
+													<span class="font-semibold text-[#093865]">Nov 12, 2025</span>
+												</div>
+												<div class="flex items-center justify-between text-sm">
+													<span class="text-gray-600">Status</span>
+													<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold">
+														<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+														Active
+													</span>
+												</div>
+											</div>
+
+											<div class="pt-4 border-t border-gray-200">
+												<div class="grid grid-cols-2 gap-2">
+													<button class="px-4 py-2 rounded-lg border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+														Pause
+													</button>
+													<button class="px-4 py-2 rounded-lg bg-gradient-to-r from-[#90D144] to-[#13B8A6] text-white text-sm font-medium hover:shadow-lg transition-shadow">
+														Upgrade
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<div class="mt-20 relative" data-animate="fade-up">
+			<div class="absolute inset-0 bg-gradient-to-r from-[#90D144]/10 via-[#13B8A6]/10 to-[#90D144]/10 rounded-3xl blur-2xl"></div>
+			<div class="relative bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-12 text-center">
+				<h3 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+					No matter your business type -
+					<span class="block mt-2 bg-gradient-to-r from-[#90D144] to-[#13B8A6] bg-clip-text text-transparent">
+						Recurio automates it all.
+					</span>
+				</h3>
+				<p class="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+					Start automating your subscription revenue today with zero setup fees
+				</p>
+				<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+					<button class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#90D144] to-[#13B8A6] text-white font-bold text-lg rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-[#90D144]/30 hover:scale-105">
+						<svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+							<polyline points="7 10 12 15 17 10"></polyline>
+							<line x1="12" y1="15" x2="12" y2="3"></line>
+						</svg>
+						Download Free
+					</button>
+					<button class="group inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-full border-2 border-white/20 hover:bg-white/20 transition-all duration-300">
+						Explore Features
+						<svg viewBox="0 0 24 24" class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M5 12h14"></path>
+							<path d="m13 5 7 7-7 7"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		[data-animate] {
+			opacity: 0;
+			transform: translateY(32px);
+			transition: opacity 700ms ease, transform 700ms ease;
+		}
+
+		[data-usecases].is-visible [data-animate] {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.usecase-tab {
+			opacity: 0;
+			transform: translateY(48px);
+		}
+
+		[data-usecases].is-visible .usecase-tab {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.usecase-underline {
+			opacity: 0;
+		}
+
+		.usecase-tab[data-active="true"] {
+			background: #fff;
+			border-color: transparent;
+			box-shadow: 0 25px 50px -12px rgba(144, 209, 68, 0.2);
+			transform: scale(1.05);
+		}
+
+		.usecase-tab[data-active="true"] .usecase-underline {
+			opacity: 1;
+		}
+
+		.usecase-tab[data-active="true"] .usecase-icon {
+			background: linear-gradient(to bottom right, #90d144, #13b8a6);
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+		}
+
+		.usecase-tab[data-active="true"] .usecase-icon svg {
+			color: #fff;
+		}
+
+		.usecase-tab[data-active="true"] .usecase-label {
+			color: #093865;
+		}
+
+		.usecase-tab[data-active="false"] .usecase-label {
+			color: rgba(255, 255, 255, 0.8);
+		}
+
+		.usecase-tab[data-active="false"] {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(8px);
+		}
+
+		.usecase-tab[data-active="false"] .usecase-icon {
+			background: rgba(255, 255, 255, 0.1);
+		}
+
+		.usecase-tab[data-active="false"] .usecase-icon svg {
+			color: #90d144;
+		}
+
+		.usecase-tab:hover:not([data-active="true"]) {
+			background: rgba(255, 255, 255, 0.1);
+		}
+
+		.usecase-panel {
+			opacity: 0;
+			transform: scale(0.95);
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+		}
+
+		.usecase-panel[data-active="true"] {
+			opacity: 1;
+			transform: scale(1);
+			position: relative;
+			pointer-events: auto;
+		}
+	</style>
+
+	<script type="module">
+		const section = document.querySelector("[data-usecases]");
+		if (section) {
+			const tabs = Array.from(section.querySelectorAll("[data-tab]"));
+			const panels = Array.from(section.querySelectorAll("[data-panel]"));
+
+			const setActive = (index) => {
+				tabs.forEach((tab, idx) => {
+					tab.dataset.active = idx === index ? "true" : "false";
+				});
+				panels.forEach((panel, idx) => {
+					panel.dataset.active = idx === index ? "true" : "false";
+				});
+			};
+
+			tabs.forEach((tab, idx) => {
+				tab.addEventListener("click", () => setActive(idx));
+			});
+
+			const observer = new IntersectionObserver(
+				([entry]) => {
+					if (entry.isIntersecting) {
+						section.classList.add("is-visible");
+						observer.disconnect();
+					}
+				},
+				{ threshold: 0.1 },
+			);
+			observer.observe(section);
+		}
+	</script>
+</section>
