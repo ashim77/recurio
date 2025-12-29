@@ -1,0 +1,445 @@
+---
+const features = [
+	{
+		icon: 'settings',
+		title: 'Manage Easily',
+		subtitle: 'Complete Control',
+		description:
+			'Control every subscription in real time with bulk actions, trials, and instant updates.',
+		details: [
+			'Bulk edit subscription details',
+			'Real-time status monitoring',
+			'Advanced filtering and search',
+			'Custom trial periods',
+		],
+		gradientFrom: '#093865',
+		gradientTo: '#0B4A7D',
+		number: '01',
+	},
+	{
+		icon: 'refresh',
+		title: 'Automate Billing',
+		subtitle: 'Zero Manual Work',
+		description:
+			'Ensure timely renewals and prevent revenue loss with smart dunning and retry logic.',
+		details: [
+			'Smart payment retry logic',
+			'Automatic renewal processing',
+			'Failed payment recovery',
+			'Customizable billing cycles',
+		],
+		gradientFrom: '#13B8A6',
+		gradientTo: '#0D9488',
+		number: '02',
+	},
+	{
+		icon: 'trending',
+		title: 'Understand & Grow',
+		subtitle: 'Data-Driven Insights',
+		description:
+			'Access analytics dashboards, churn tracking, and revenue forecasting tools.',
+		details: [
+			'MRR and ARR tracking',
+			'Churn rate analysis',
+			'Revenue forecasting',
+			'Customer lifetime value',
+		],
+		gradientFrom: '#90D144',
+		gradientTo: '#7BC135',
+		number: '03',
+	},
+	{
+		icon: 'heart',
+		title: 'Delight Customers',
+		subtitle: 'Self-Service Portal',
+		description:
+			'Empower subscribers with self-service portals and personalized renewal emails.',
+		details: [
+			'Customer subscription portal',
+			'One-click upgrades/downgrades',
+			'Pause and resume options',
+			'Personalized email sequences',
+		],
+		gradientFrom: '#093865',
+		gradientTo: '#13B8A6',
+		number: '04',
+	},
+];
+
+const featureIconSvg = (name, className) => {
+	if (name === 'settings') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V22a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H2a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01A1.65 1.65 0 0 0 9 2.09V2a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01A1.65 1.65 0 0 0 21.91 11H22a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>`;
+	}
+	if (name === 'refresh') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>`;
+	}
+	if (name === 'trending') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 7-7"></path><path d="M21 7v6h-6"></path></svg>`;
+	}
+	return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"></path></svg>`;
+};
+---
+
+<section data-feature-overview class="relative py-24 lg:py-32 overflow-hidden bg-white">
+	<div class="absolute inset-0 bg-gradient-to-br from-[#E6F4F1]/30 via-white to-[#F0F9FF]/30"></div>
+
+	<div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#13B8A6]/5 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-[#90D144]/5 rounded-full blur-3xl"></div>
+
+	<div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-16 lg:mb-20" data-animate="fade-up">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#90D144]/20 mb-6">
+				<svg viewBox="0 0 24 24" class="w-4 h-4 text-[#90D144]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path>
+				</svg>
+				<span class="text-sm font-bold text-[#093865]">POWERFUL FEATURES</span>
+			</div>
+			<h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#093865] mb-6 leading-tight">
+				All-in-One WooCommerce
+				<span class="block mt-2 bg-gradient-to-r from-[#13B8A6] to-[#90D144] bg-clip-text text-transparent">
+					Subscription Suite
+				</span>
+			</h2>
+			<p class="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+				Everything you need to manage, automate, and grow recurring revenue — all inside one plugin.
+			</p>
+		</div>
+
+		<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+			<div data-animate="fade-left">
+				<div class="space-y-4">
+					{features.map((feature, idx) => (
+						<button
+							type="button"
+							data-feature-item
+							data-index={idx}
+							data-active={idx === 0 ? 'true' : 'false'}
+							class="feature-item group w-full text-left p-6 rounded-2xl transition-all duration-500"
+						>
+							<div class="flex items-start gap-4">
+								<div class="flex-shrink-0">
+									<div class="feature-icon-box relative w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-500">
+										<span class="inline-flex" set:html={featureIconSvg(feature.icon, 'feature-icon w-7 h-7')}></span>
+										<div class="feature-number absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-500">
+											{feature.number}
+										</div>
+									</div>
+								</div>
+								<div class="flex-1 min-w-0">
+									<div class="flex items-center gap-2 mb-1">
+										<h3 class="feature-title text-xl font-bold transition-colors duration-300">
+											{feature.title}
+										</h3>
+										<div class="feature-pulse items-center gap-1">
+											<div class="w-1.5 h-1.5 rounded-full bg-[#90D144] animate-pulse"></div>
+											<div class="w-1.5 h-1.5 rounded-full bg-[#90D144] animate-pulse" style="animation-delay: 0.2s;"></div>
+											<div class="w-1.5 h-1.5 rounded-full bg-[#90D144] animate-pulse" style="animation-delay: 0.4s;"></div>
+										</div>
+									</div>
+									<p class="feature-subtitle text-sm font-semibold mb-2 transition-colors duration-300">
+										{feature.subtitle}
+									</p>
+									<p class="feature-description text-sm leading-relaxed transition-all duration-300">
+										{feature.description}
+									</p>
+								</div>
+								<div class="flex-shrink-0">
+									<svg viewBox="0 0 24 24" class="feature-arrow w-5 h-5 transition-all duration-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+										<path d="M5 12h14"></path>
+										<path d="m13 5 7 7-7 7"></path>
+									</svg>
+								</div>
+							</div>
+
+							<div class="feature-details mt-4 pt-4 border-t border-gray-100">
+								<div class="grid grid-cols-2 gap-3">
+									{feature.details.map((detail, detailIdx) => (
+										<div
+											class="flex items-start gap-2 animate-fadeIn"
+											style={`animation-delay: ${detailIdx * 100}ms;`}
+										>
+											<svg viewBox="0 0 24 24" class="w-4 h-4 text-[#90D144] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+												<path d="M20 6 9 17l-5-5"></path>
+											</svg>
+											<span class="text-xs text-gray-600">{detail}</span>
+										</div>
+									))}
+								</div>
+							</div>
+						</button>
+					))}
+				</div>
+
+				<div class="mt-8 flex items-center gap-3">
+					<div class="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+						<div data-feature-progress class="h-full bg-gradient-to-r from-[#90D144] to-[#13B8A6] rounded-full transition-all duration-500" style="width: 25%;"></div>
+					</div>
+					<span data-feature-count class="text-sm font-semibold text-gray-600">1 / 4</span>
+				</div>
+			</div>
+
+			<div class="relative" data-animate="fade-right">
+				<div class="relative">
+					{features.map((feature, idx) => (
+						<div
+							data-feature-panel
+							data-index={idx}
+							data-active={idx === 0 ? 'true' : 'false'}
+							class="feature-panel transition-all duration-700"
+						>
+							<div
+								class="relative rounded-3xl overflow-hidden shadow-2xl"
+								style={`background-image: linear-gradient(to bottom right, ${feature.gradientFrom}, ${feature.gradientTo});`}
+							>
+								<div class="absolute inset-0 opacity-10">
+									<div
+										class="absolute inset-0"
+										style="background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 40px 40px;"
+									></div>
+								</div>
+
+								<div class="relative p-12">
+									<div class="flex items-center gap-4 mb-8">
+										<div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+											<span class="inline-flex" set:html={featureIconSvg(feature.icon, 'w-8 h-8 text-[#093865]')}></span>
+										</div>
+										<div>
+											<div class="text-[#093865] text-sm font-semibold mb-1">
+												{feature.subtitle}
+											</div>
+											<h3 class="text-2xl font-bold text-[#093865]">{feature.title}</h3>
+										</div>
+									</div>
+
+									<div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+										<div class="space-y-4">
+											{feature.details.map((detail) => (
+												<div class="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-gray-50 to-white group hover:shadow-md transition-all duration-300">
+													<div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-[#90D144] to-[#13B8A6] flex items-center justify-center">
+														<svg viewBox="0 0 24 24" class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+															<path d="M20 6 9 17l-5-5"></path>
+														</svg>
+													</div>
+													<span class="text-[#093865] font-medium">{detail}</span>
+												</div>
+											))}
+										</div>
+
+										<div class="mt-6 pt-6 border-t border-gray-200">
+											<button class="w-full group inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#093865] to-[#13B8A6] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300">
+												<span>Learn More</span>
+												<svg viewBox="0 0 24 24" class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+													<path d="M5 12h14"></path>
+													<path d="m13 5 7 7-7 7"></path>
+												</svg>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		[data-animate] {
+			opacity: 0;
+			transition: opacity 700ms ease, transform 700ms ease;
+		}
+
+		[data-animate="fade-up"] {
+			transform: translateY(32px);
+		}
+
+		[data-animate="fade-left"] {
+			transform: translateX(-48px);
+		}
+
+		[data-animate="fade-right"] {
+			transform: translateX(48px);
+		}
+
+		[data-feature-overview].is-visible [data-animate] {
+			opacity: 1;
+			transform: translate(0);
+		}
+
+		.feature-item {
+			background: rgba(249, 250, 251, 0.5);
+			border: 2px solid transparent;
+		}
+
+		.feature-item:hover {
+			background: rgba(249, 250, 251, 1);
+		}
+
+		.feature-item[data-active="true"] {
+			background: #fff;
+			border-color: rgba(19, 184, 166, 0.2);
+			box-shadow: 0 20px 25px -5px rgba(19, 184, 166, 0.1), 0 10px 10px -5px rgba(19, 184, 166, 0.04);
+		}
+
+		.feature-icon-box {
+			background: #fff;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+		}
+
+		.feature-item[data-active="true"] .feature-icon-box {
+			background: linear-gradient(to bottom right, #90d144, #13b8a6);
+			box-shadow: 0 10px 15px -3px rgba(19, 184, 166, 0.2);
+		}
+
+		.feature-icon {
+			color: #093865;
+		}
+
+		.feature-item[data-active="true"] .feature-icon {
+			color: #fff;
+		}
+
+		.feature-number {
+			background: #e5e7eb;
+			color: #6b7280;
+			transform: scale(0.9);
+		}
+
+		.feature-item[data-active="true"] .feature-number {
+			background: #093865;
+			color: #fff;
+			transform: scale(1);
+		}
+
+		.feature-title {
+			color: #374151;
+		}
+
+		.feature-subtitle {
+			color: #6b7280;
+		}
+
+		.feature-description {
+			color: #6b7280;
+		}
+
+		.feature-item[data-active="true"] .feature-title {
+			color: #093865;
+		}
+
+		.feature-item[data-active="true"] .feature-subtitle {
+			color: #13b8a6;
+		}
+
+		.feature-item[data-active="true"] .feature-description {
+			color: #4b5563;
+		}
+
+		.feature-arrow {
+			color: #9ca3af;
+		}
+
+		.feature-item[data-active="true"] .feature-arrow {
+			color: #90d144;
+			transform: translateX(4px);
+		}
+
+		.feature-pulse {
+			display: none;
+		}
+
+		.feature-item[data-active="true"] .feature-pulse {
+			display: flex;
+		}
+
+		.feature-details {
+			display: none;
+		}
+
+		.feature-item[data-active="true"] .feature-details {
+			display: block;
+		}
+
+		.feature-panel {
+			opacity: 0;
+			transform: scale(0.95);
+			position: absolute;
+			inset: 0;
+		}
+
+		.feature-panel[data-active="true"] {
+			opacity: 1;
+			transform: scale(1);
+			position: relative;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(4px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.animate-fadeIn {
+			animation: fadeIn 0.4s ease-out forwards;
+			opacity: 0;
+		}
+	</style>
+
+	<script type="module">
+		const section = document.querySelector("[data-feature-overview]");
+		if (section) {
+			const items = Array.from(section.querySelectorAll("[data-feature-item]"));
+			const panels = Array.from(section.querySelectorAll("[data-feature-panel]"));
+			const progress = section.querySelector("[data-feature-progress]");
+			const count = section.querySelector("[data-feature-count]");
+			let activeIndex = 0;
+			const total = items.length;
+
+			const setActive = (index) => {
+				activeIndex = index;
+				items.forEach((item, idx) => {
+					item.dataset.active = idx === index ? "true" : "false";
+					item.setAttribute("aria-pressed", idx === index ? "true" : "false");
+				});
+				panels.forEach((panel, idx) => {
+					panel.dataset.active = idx === index ? "true" : "false";
+				});
+				if (progress) {
+					progress.style.width = `${((index + 1) / total) * 100}%`;
+				}
+				if (count) {
+					count.textContent = `${index + 1} / ${total}`;
+				}
+			};
+
+			items.forEach((item, idx) => {
+				item.addEventListener("click", () => setActive(idx));
+			});
+
+			setActive(0);
+
+			const rotate = setInterval(() => {
+				setActive((activeIndex + 1) % total);
+			}, 4000);
+
+			const observer = new IntersectionObserver(
+				([entry]) => {
+					if (entry.isIntersecting) {
+						section.classList.add("is-visible");
+						observer.disconnect();
+					}
+				},
+				{ threshold: 0.1 },
+			);
+			observer.observe(section);
+
+			window.addEventListener("beforeunload", () => clearInterval(rotate));
+		}
+	</script>
+</section>

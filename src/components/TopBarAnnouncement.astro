@@ -1,0 +1,89 @@
+---
+const TOP_BAR_DISMISSED_KEY = 'recurio_topbar_dismissed';
+---
+
+<div
+	data-topbar
+	class="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-[#90D144] via-[#13B8A6] to-[#0B4A7D] shadow-lg animate-in slide-in-from-top duration-500"
+>
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex items-center justify-between py-3 gap-4">
+			<div class="flex items-center gap-3 flex-1 min-w-0">
+				<div class="hidden sm:flex items-center justify-center w-8 h-8 bg-white/20 rounded-full flex-shrink-0">
+					<svg viewBox="0 0 24 24" class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M9 18h6" />
+						<path d="M10 2h4" />
+						<path d="M12 2v4" />
+						<path d="M8 4a4 4 0 0 0 8 0" />
+						<path d="M6 12a6 6 0 1 1 12 0v2a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z" />
+					</svg>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 flex-1 min-w-0">
+					<p class="text-white font-bold text-sm sm:text-base flex-shrink-0">
+						Pro Plan Launching in 7 Days!
+					</p>
+					<p class="text-white/95 text-xs sm:text-sm truncate">
+						Get exclusive early access pricing
+					</p>
+				</div>
+			</div>
+
+			<div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+				<a
+					href="/pricing"
+					class="px-3 sm:px-5 py-1.5 sm:py-2 bg-white hover:bg-gray-50 text-[#093865] font-bold text-xs sm:text-sm rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
+				>
+					Join Waiting List
+				</a>
+				<button
+					data-topbar-dismiss
+					class="text-white/80 hover:text-white transition-colors p-1 hover:bg-white/10 rounded-lg flex-shrink-0"
+					aria-label="Dismiss announcement"
+				>
+					<svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M18 6 6 18" />
+						<path d="m6 6 12 12" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div data-topbar-spacer class="h-[52px] sm:h-[56px]"></div>
+
+<script type="module">
+	const TOP_BAR_DISMISSED_KEY = "recurio_topbar_dismissed";
+	const topbar = document.querySelector("[data-topbar]");
+	const spacer = document.querySelector("[data-topbar-spacer]");
+	const header = document.querySelector("[data-site-header]");
+	const dismiss = document.querySelector("[data-topbar-dismiss]");
+
+	const setHeaderOffset = (visible) => {
+		if (!header) return;
+		if (visible) {
+			header.classList.remove("top-0");
+			header.classList.add("top-[52px]", "sm:top-[56px]");
+		} else {
+			header.classList.remove("top-[52px]", "sm:top-[56px]");
+			header.classList.add("top-0");
+		}
+	};
+
+	const applyVisibility = () => {
+		const dismissed = localStorage.getItem(TOP_BAR_DISMISSED_KEY);
+		const visible = !dismissed;
+		if (topbar) topbar.classList.toggle("hidden", !visible);
+		if (spacer) spacer.classList.toggle("hidden", !visible);
+		setHeaderOffset(visible);
+	};
+
+	applyVisibility();
+
+	dismiss?.addEventListener("click", () => {
+		localStorage.setItem(TOP_BAR_DISMISSED_KEY, "true");
+		applyVisibility();
+	});
+
+	window.addEventListener("storage", applyVisibility);
+</script>
