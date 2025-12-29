@@ -1,0 +1,244 @@
+---
+const scenarios = [
+	{
+		category: 'Fitness Brand',
+		icon: 'dumbbell',
+		iconColor: 'from-[#90D144] to-[#7BC135]',
+		scenario: 'Automating renewals for gym memberships and coaching subscriptions.',
+		outcome: 'Down 35% churn rate & up 20% renewals after adding automated billing.',
+	},
+	{
+		category: 'eLearning Platform',
+		icon: 'grad',
+		iconColor: 'from-[#13B8A6] to-[#0D9488]',
+		scenario: 'Managing course subscriptions and student memberships.',
+		outcome: 'Up 3x faster growth in recurring revenue with predictive analytics.',
+	},
+	{
+		category: 'Subscription Box Brand',
+		icon: 'package',
+		iconColor: 'from-[#093865] to-[#13B8A6]',
+		scenario: 'Reducing missed renewals and manual invoicing.',
+		outcome: 'Down 60% support tickets with self-service customer portal.',
+	},
+	{
+		category: 'SaaS Company',
+		icon: 'laptop',
+		iconColor: 'from-[#90D144] to-[#13B8A6]',
+		scenario: 'Managing thousands of recurring software licenses.',
+		outcome: 'Up 99.9% uptime & real-time billing visibility with automation.',
+	},
+	{
+		category: 'Media Platform',
+		icon: 'monitor',
+		iconColor: 'from-[#13B8A6] to-[#90D144]',
+		scenario: 'Streamlining content subscriptions and member access.',
+		outcome: 'Down 50% onboarding time with automated subscription setup.',
+	},
+	{
+		category: 'Wellness Services',
+		icon: 'dumbbell',
+		iconColor: 'from-[#7BC135] to-[#13B8A6]',
+		scenario: 'Automating appointment-based subscriptions and memberships.',
+		outcome: 'Up 2x customer retention with flexible billing options.',
+	},
+];
+
+const stats = [
+	{ value: '$1.5T+', label: 'Global Subscription Economy by 2025' },
+	{ value: '3x Faster', label: 'Growth vs Traditional eCommerce' },
+	{ value: '78%', label: 'Consumers Prefer Auto-Renewals' },
+	{ value: '55%', label: 'Merchants Adding Subscriptions in 2025' },
+];
+
+const iconSvg = (type, className) => {
+	if (type === 'dumbbell') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"></path><path d="M3 10a1 1 0 0 1 0-2h2.5"></path><path d="M18.5 16.5H21a1 1 0 0 1 0 2h-2.5"></path><path d="M3 14a1 1 0 0 1 0-2h2.5"></path><path d="M18.5 7.5H21a1 1 0 0 1 0 2h-2.5"></path><path d="M8 4a2 2 0 0 1 2-2h1"></path><path d="M13 20h1a2 2 0 0 0 2-2"></path></svg>`;
+	}
+	if (type === 'grad') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 6 2 10l10 4 10-4z"></path><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"></path></svg>`;
+	}
+	if (type === 'package') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10"></path><path d="m7 17 10-10"></path><rect x="3" y="5" width="18" height="14" rx="2"></rect></svg>`;
+	}
+	if (type === 'laptop') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"></rect><path d="M2 20h20"></path></svg>`;
+	}
+	return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><line x1="8" y1="20" x2="16" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line></svg>`;
+};
+---
+
+<section data-testimonials class="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
+	<div class="absolute inset-0">
+		<div class="absolute top-20 left-10 w-72 h-72 bg-[#90D144]/5 rounded-full blur-3xl"></div>
+		<div class="absolute bottom-20 right-10 w-96 h-96 bg-[#13B8A6]/5 rounded-full blur-3xl"></div>
+		<div
+			class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
+			style="background-image: radial-gradient(circle at 50% 50%, rgba(144, 209, 68, 0.03) 0%, transparent 50%);"
+		></div>
+	</div>
+
+	<div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-16 lg:mb-20" data-animate="fade-up">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#90D144]/20 mb-6">
+				<svg viewBox="0 0 24 24" class="w-4 h-4 text-[#90D144]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="m3 17 6-6 4 4 7-7"></path>
+					<path d="M21 7v6h-6"></path>
+				</svg>
+				<span class="text-sm font-bold text-[#093865]">INDUSTRY SCENARIOS</span>
+			</div>
+			<h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#093865] mb-6 leading-tight">
+				Real-World Impact
+				<span class="block mt-2 bg-gradient-to-r from-[#90D144] to-[#13B8A6] bg-clip-text text-transparent">
+					Across Industries
+				</span>
+			</h2>
+			<p class="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+				See how businesses transform with recurring revenue automation and proven subscription management strategies.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16" data-animate="fade-up" style="transition-delay: 200ms;">
+			{stats.map((stat, idx) => (
+				<div
+					class="text-center p-6 rounded-2xl bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300"
+					style={`transition-delay: ${200 + idx * 100}ms;`}
+				>
+					<div class="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#90D144] to-[#13B8A6] bg-clip-text text-transparent mb-2">
+						{stat.value}
+					</div>
+					<div class="text-sm text-gray-600 font-medium">{stat.label}</div>
+				</div>
+			))}
+		</div>
+
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate="fade-up" style="transition-delay: 600ms;">
+			{scenarios.map((scenario, idx) => (
+				<div
+					class="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+					style={`transition-delay: ${600 + idx * 100}ms;`}
+				>
+					<div class="relative">
+						<div class="flex items-center gap-4 mb-6">
+							<div class={`w-14 h-14 rounded-xl bg-gradient-to-br ${scenario.iconColor} flex items-center justify-center shadow-lg`}>
+								<span class="inline-flex" set:html={iconSvg(scenario.icon, 'w-7 h-7 text-white')}></span>
+							</div>
+							<div class="flex-1">
+								<div class="font-bold text-lg text-[#093865]">{scenario.category}</div>
+							</div>
+						</div>
+
+						<div class="mb-4">
+							<div class="text-sm font-semibold text-[#13B8A6] uppercase tracking-wide mb-2">Scenario</div>
+							<p class="text-gray-700 leading-relaxed">{scenario.scenario}</p>
+						</div>
+
+						<div class="flex items-center gap-2 mb-4">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 text-[#90D144]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M5 12h14"></path>
+								<path d="m13 5 7 7-7 7"></path>
+							</svg>
+							<div class="h-px flex-1 bg-gradient-to-r from-[#90D144] to-[#13B8A6]"></div>
+						</div>
+
+						<div>
+							<div class="text-sm font-semibold text-[#90D144] uppercase tracking-wide mb-2">Outcome</div>
+							<p class="text-[#093865] font-semibold leading-relaxed">{scenario.outcome}</p>
+						</div>
+					</div>
+
+					<div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#90D144] to-[#13B8A6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl"></div>
+				</div>
+			))}
+		</div>
+
+		<div class="mt-12 p-6 rounded-2xl" data-animate="fade-up" style="transition-delay: 900ms;">
+			<div class="flex items-start gap-3 text-left">
+				<div class="flex-shrink-0 mt-1">
+					<div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#90D144] to-[#13B8A6] flex items-center justify-center">
+						<svg viewBox="0 0 24 24" class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="m3 17 6-6 4 4 7-7"></path>
+							<path d="M21 7v6h-6"></path>
+						</svg>
+					</div>
+				</div>
+				<div>
+					<div class="font-semibold text-[#093865] mb-2">Data-Backed Scenarios</div>
+					<p class="text-sm text-gray-600 leading-relaxed italic">
+						The above examples are based on real industry performance data from leading subscription management systems and research (Chargebee, Recurly, Baremetrics, Subscription Economy Index, etc.).
+					</p>
+					<p class="text-sm text-[#093865] font-medium mt-2">
+						Recurio brings the same automation power to WooCommerce.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-16 text-center" data-animate="fade-up" style="transition-delay: 1000ms;">
+			<div class="inline-flex flex-col items-center gap-6 px-8 py-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 shadow-xl">
+				<div>
+					<h3 class="text-2xl lg:text-3xl font-bold text-[#093865] mb-3">
+						Ready to See These Results?
+					</h3>
+					<p class="text-gray-600 max-w-xl">
+						Start building your subscription business today with Recurio's powerful automation and industry-proven strategies.
+					</p>
+				</div>
+				<div class="flex flex-col sm:flex-row items-center gap-4">
+					<a href="/pricing" class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#90D144] to-[#13B8A6] text-white font-bold text-lg rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-[#90D144]/30 hover:scale-105">
+						Get Started Free
+						<svg viewBox="0 0 24 24" class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M5 12h14"></path>
+							<path d="m13 5 7 7-7 7"></path>
+						</svg>
+					</a>
+					<div class="flex items-center gap-2 text-sm text-gray-600">
+						<div class="flex -space-x-2">
+							<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#90D144] to-[#7BC135] border-2 border-white flex items-center justify-center shadow-md">
+								<span class="inline-flex" set:html={iconSvg('dumbbell', 'w-4 h-4 text-white')}></span>
+							</div>
+							<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#13B8A6] to-[#0D9488] border-2 border-white flex items-center justify-center shadow-md">
+								<span class="inline-flex" set:html={iconSvg('grad', 'w-4 h-4 text-white')}></span>
+							</div>
+							<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#093865] to-[#13B8A6] border-2 border-white flex items-center justify-center shadow-md">
+								<span class="inline-flex" set:html={iconSvg('package', 'w-4 h-4 text-white')}></span>
+							</div>
+						</div>
+						<span class="font-medium">Transform your business model</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		[data-animate] {
+			opacity: 0;
+			transform: translateY(32px);
+			transition: opacity 700ms ease, transform 700ms ease;
+		}
+
+		[data-testimonials].is-visible [data-animate] {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
+
+	<script type="module">
+		const section = document.querySelector("[data-testimonials]");
+		if (!section) {
+			throw new Error("Testimonials section not found");
+		}
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					section.classList.add("is-visible");
+					observer.disconnect();
+				}
+			},
+			{ threshold: 0.1 },
+		);
+		observer.observe(section);
+	</script>
+</section>

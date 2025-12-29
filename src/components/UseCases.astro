@@ -143,12 +143,12 @@ const iconSvg = (type: string, className: string): string => {
 					data-tab
 					data-index={idx}
 					data-active={idx === 0 ? 'true' : 'false'}
-					class="usecase-tab group relative p-6 rounded-2xl transition-all duration-500 text-left"
+					class="usecase-tab group cursor-pointer relative p-6 rounded-2xl transition-all duration-500 text-left"
 					style={`transition-delay: ${idx * 100}ms;`}
 				>
 					<div class="flex flex-col items-center text-center gap-3">
 						<div class="usecase-icon w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-500 bg-white/10">
-							<span class="inline-flex" set:html={iconSvg(useCase.icon, 'w-7 h-7 transition-colors duration-500')}></span>
+							<span class="inline-flex" set:html={iconSvg(useCase.icon, 'w-7 h-7 transition-colors duration-500 text-[#13B8A6] group-data-[active=true]:text-white')}></span>
 						</div>
 						<span class="usecase-label font-bold text-sm transition-colors duration-300">
 							{useCase.category}

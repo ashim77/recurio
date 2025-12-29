@@ -1,0 +1,200 @@
+---
+const faqs = [
+	{
+		question: 'What is Recurio?',
+		answer: 'Recurio is a powerful WordPress plugin that brings automated recurring billing, renewals, analytics, and customer self-service tools to WooCommerce. It helps store owners manage subscriptions effortlessly while reducing churn and failed payments.',
+	},
+	{
+		question: 'Does Recurio work with any WooCommerce theme?',
+		answer: 'Yes. Recurio is built using native WooCommerce and WordPress standards, so it works seamlessly with any modern theme - including Astra, Kadence, Flatsome, and Storefront.',
+	},
+	{
+		question: 'Can I use Recurio alongside WooCommerce Subscriptions or YITH Subscriptions?',
+		answer: 'We recommend using Recurio as a standalone solution for the best performance. However, you can safely install and test it in a staging environment before switching fully from other plugins.',
+	},
+	{
+		question: 'Is Recurio free to use?',
+		answer: 'Yes. Recurio offers a fully functional free version that covers essential subscription features. The Pro version unlocks advanced features like analytics, smart retries, and revenue forecasting.',
+	},
+	{
+		question: 'What payment gateways does Recurio support?',
+		answer: 'Recurio works with all major WooCommerce-supported payment gateways, including Stripe, PayPal, and Authorize.net. Any gateway that supports recurring payments is compatible.',
+	},
+	{
+		question: 'Does Recurio automatically handle failed payments?',
+		answer: 'Absolutely. Recurio includes smart dunning and retry logic that automatically reattempts failed payments, helping you recover lost revenue effortlessly.',
+	},
+	{
+		question: 'Can customers manage their own subscriptions?',
+		answer: 'Yes. Recurio includes a built-in customer portal where users can pause, cancel, or update their subscriptions - reducing your support load and improving retention.',
+	},
+	{
+		question: 'How can I get support or report an issue?',
+		answer: "You can contact the Recurio support team anytime through the WordPress plugin dashboard or our website's support page. We also provide detailed documentation and tutorials.",
+	},
+];
+
+const plusIcon = `
+<svg viewBox="0 0 24 24" class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="12" y1="5" x2="12" y2="19"></line>
+  <line x1="5" y1="12" x2="19" y2="12"></line>
+</svg>`;
+const minusIcon = `
+<svg viewBox="0 0 24 24" class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="5" y1="12" x2="19" y2="12"></line>
+</svg>`;
+---
+
+<section data-faq class="relative py-24 lg:py-32 overflow-hidden bg-white">
+	<div class="absolute inset-0">
+		<div class="absolute top-20 right-10 w-72 h-72 bg-[#13B8A6]/5 rounded-full blur-3xl"></div>
+		<div class="absolute bottom-20 left-10 w-96 h-96 bg-[#90D144]/5 rounded-full blur-3xl"></div>
+	</div>
+
+	<div class="relative max-w-4xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-16" data-animate="fade-up">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#90D144]/20 mb-6">
+				<svg viewBox="0 0 24 24" class="w-4 h-4 text-[#90D144]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="12" cy="12" r="10"></circle>
+					<path d="M9.09 9a3 3 0 0 1 5.82 1c0 2-3 2-3 4"></path>
+					<line x1="12" y1="17" x2="12.01" y2="17"></line>
+				</svg>
+				<span class="text-sm font-bold text-[#093865]">FAQS</span>
+			</div>
+			<h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#093865] mb-6 leading-tight">
+				Common Questions
+				<span class="block mt-2 bg-gradient-to-r from-[#90D144] to-[#13B8A6] bg-clip-text text-transparent">
+					Answered
+				</span>
+			</h2>
+			<p class="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+				Everything you need to know about Recurio and how it can transform your subscription business.
+			</p>
+		</div>
+
+		<div class="space-y-4" data-animate="fade-up" style="transition-delay: 200ms;">
+			{faqs.map((faq, index) => (
+				<div class="faq-item bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden" data-index={index}>
+					<button
+						type="button"
+						class="faq-toggle w-full flex items-start justify-between gap-4 p-6 text-left hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+						aria-expanded="false"
+					>
+						<div class="flex-1">
+							<h3 class="text-lg lg:text-xl font-bold text-[#093865] leading-relaxed">
+								{faq.question}
+							</h3>
+						</div>
+						<div class="flex-shrink-0 mt-1">
+							<div class="faq-icon w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 bg-gray-100">
+								<span class="icon-plus" set:html={plusIcon}></span>
+								<span class="icon-minus hidden" set:html={minusIcon}></span>
+							</div>
+						</div>
+					</button>
+
+					<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+						<div class="px-6 pb-6">
+							<div class="pt-2 border-t border-gray-100">
+								<p class="text-gray-700 leading-relaxed mt-4">
+									{faq.answer}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<div class="mt-12 text-center" data-animate="fade-up" style="transition-delay: 600ms;">
+			<div class="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200">
+				<p class="text-gray-600">Still have questions?</p>
+				<button class="cursor-pointer inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#90D144] to-[#13B8A6] text-white font-bold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-[#90D144]/30 hover:scale-105">
+					<svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="10"></circle>
+						<path d="M9.09 9a3 3 0 0 1 5.82 1c0 2-3 2-3 4"></path>
+						<line x1="12" y1="17" x2="12.01" y2="17"></line>
+					</svg>
+					Contact Support
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		[data-animate] {
+			opacity: 0;
+			transform: translateY(32px);
+			transition: opacity 700ms ease, transform 700ms ease;
+		}
+
+		[data-faq].is-visible [data-animate] {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.faq-item[data-open="true"] .faq-icon {
+			background: linear-gradient(to bottom right, #90d144, #13b8a6);
+		}
+
+		.faq-item[data-open="true"] .icon-plus {
+			display: none;
+		}
+
+		.faq-item[data-open="true"] .icon-minus {
+			display: block;
+		}
+	</style>
+
+	<script type="module">
+		const section = document.querySelector("[data-faq]");
+		if (!section) {
+			throw new Error("FAQ section not found");
+		}
+
+		const toggles = Array.from(section.querySelectorAll(".faq-toggle"));
+		const items = Array.from(section.querySelectorAll(".faq-item"));
+
+		const closeAll = () => {
+			items.forEach((item, idx) => {
+				item.dataset.open = "false";
+				const answer = item.querySelector(".faq-answer");
+				if (answer) {
+					answer.style.maxHeight = "0px";
+				}
+				const button = toggles[idx];
+				if (button) {
+					button.setAttribute("aria-expanded", "false");
+				}
+			});
+		};
+
+		toggles.forEach((toggle) => {
+			toggle.addEventListener("click", () => {
+				const item = toggle.closest(".faq-item");
+				if (!item) return;
+				const isOpen = item.dataset.open === "true";
+				closeAll();
+				if (!isOpen) {
+					item.dataset.open = "true";
+					const answer = item.querySelector(".faq-answer");
+					if (answer) {
+						answer.style.maxHeight = `${answer.scrollHeight}px`;
+					}
+					toggle.setAttribute("aria-expanded", "true");
+				}
+			});
+		});
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					section.classList.add("is-visible");
+					observer.disconnect();
+				}
+			},
+			{ threshold: 0.1 },
+		);
+		observer.observe(section);
+	</script>
+</section>

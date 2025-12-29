@@ -1,0 +1,932 @@
+---
+const iconSvg = (type, className) => {
+	if (type === 'check') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>`;
+	}
+	if (type === 'shield') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>`;
+	}
+	if (type === 'refresh') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6l3-3v9h-9l3-3a6 6 0 1 0 1.5 6"/></svg>`;
+	}
+	if (type === 'zap') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>`;
+	}
+	if (type === 'bar-chart') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v3"/><path d="M12 9v9"/><path d="M17 6v12"/></svg>`;
+	}
+	if (type === 'brain') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4a3 3 0 0 1 6 0 3 3 0 0 1 6 0"/><path d="M6 4v6a3 3 0 0 0 3 3h2"/><path d="M18 4v6a3 3 0 0 1-3 3h-2"/><path d="M9 13a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3"/><path d="M15 13a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3"/></svg>`;
+	}
+	if (type === 'arrow-up') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7-7-7"/><path d="M5 12h14"/></svg>`;
+	}
+	if (type === 'users') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`;
+	}
+	if (type === 'link') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 1 0-7l2-2a5 5 0 0 1 7 7l-2 2"/><path d="M14 11a5 5 0 0 1 0 7l-2 2a5 5 0 0 1-7-7l2-2"/></svg>`;
+	}
+	if (type === 'calendar') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>`;
+	}
+	if (type === 'mail') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`;
+	}
+	if (type === 'help') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 1 1 5.82 1c0 2-3 2-3 4"/><line x1="12" y1="17" x2="12" y2="17"/></svg>`;
+	}
+	if (type === 'star') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>`;
+	}
+	if (type === 'award') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 19 22l-7-4-7 4 3.5-8.5"/></svg>`;
+	}
+	if (type === 'loader') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93 7.76 7.76"/><path d="M16.24 16.24 19.07 19.07"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07 7.76 16.24"/><path d="M16.24 7.76 19.07 4.93"/></svg>`;
+	}
+	return '';
+};
+
+const colorClasses = {
+	emerald: {
+		badge: 'bg-emerald-600',
+		ring: 'ring-2 ring-emerald-500',
+		button: 'bg-emerald-600 hover:bg-emerald-700',
+		link: 'text-emerald-600',
+		iconBg: 'bg-emerald-100',
+		iconText: 'text-emerald-600',
+		roiBg: 'bg-emerald-50 border-emerald-200',
+		roiText: 'text-emerald-900'
+	},
+	blue: {
+		badge: 'bg-blue-600',
+		ring: 'ring-2 ring-blue-500',
+		button: 'bg-blue-600 hover:bg-blue-700',
+		link: 'text-blue-600',
+		iconBg: 'bg-blue-100',
+		iconText: 'text-blue-600',
+		roiBg: 'bg-blue-50 border-blue-200',
+		roiText: 'text-blue-900'
+	},
+	amber: {
+		badge: 'bg-amber-500',
+		ring: 'ring-2 ring-amber-500',
+		button: 'bg-amber-500 hover:bg-amber-600',
+		link: 'text-amber-600',
+		iconBg: 'bg-amber-100',
+		iconText: 'text-amber-600',
+		roiBg: 'bg-amber-50 border-amber-200',
+		roiText: 'text-amber-900'
+	}
+};
+
+const pricingTiers = [
+	{
+		name: 'STARTER',
+		price: '$99',
+		billing: 'per year',
+		badge: 'MOST POPULAR',
+		bestFor: 'Single Site & Startups',
+		tagline: 'Everything you need to launch and grow your subscription business',
+		description:
+			'Unlock all 26 features including advanced billing and premium support. Perfect for entrepreneurs and single-site businesses ready to scale.',
+		features: [
+			'All 18 FREE Features, PLUS:',
+			'Daily & Weekly Billing Periods',
+			'Smart Dunning Management (Recover 40-70% of failed payments)',
+			'7 Advanced Email Campaigns',
+			'Revenue Forecasting & Projections',
+			'AI-Powered Churn Prediction',
+			'Subscription Upgrades/Downgrades with Proration',
+			'Team Collaboration Tools (3 team members)',
+			'Webhook Integrations (Zapier, Make.com, etc.)'
+		],
+		license: [
+			'1 Site License',
+			'1 Year of Updates',
+			'1 Year of Priority Email Support',
+			'Premium Documentation',
+			'24-48 Hour Response Time',
+			'30-Day Money-Back Guarantee',
+			'14-Day Free Trial (No Credit Card)'
+		],
+		roi: [
+			'Recover $40-70 for every $100 in failed payments*',
+			'Reduce churn by 25-40% with AI predictions*',
+			'Save 10+ hours/week on manual billing tasks*',
+			'Increase revenue by 15-30% with advanced billing*'
+		],
+		cta: 'Start 14-Day Free Trial',
+		ctaLink: '#',
+		accentColor: 'emerald',
+		popular: true,
+		popularText: 'Chosen by 70% of our customers'
+	},
+	{
+		name: 'PROFESSIONAL',
+		price: '$199',
+		billing: 'per year',
+		badge: null,
+		bestFor: 'Growing Businesses & Multi-Site Owners',
+		tagline: 'Scale your subscription empire across multiple sites',
+		description:
+			'Everything in Starter, plus the ability to manage subscriptions across 5 different websites. Perfect for growing businesses with multiple brands or client sites.',
+		features: [
+			'Everything in STARTER, PLUS:',
+			'5 Site Licenses',
+			'Unlimited Team Members',
+			'Priority Support (12-24 Hour Response)',
+			'Live Chat Support',
+			'Priority Onboarding & Setup Assistance',
+			'Advanced Analytics Dashboard',
+			'Enhanced Security Features',
+			'White-Label Options (Remove Recurio Branding)'
+		],
+		license: [
+			'5 Site Licenses',
+			'1 Year of Updates',
+			'Priority Support (Email + Live Chat)',
+			'Premium Documentation & Video Tutorials',
+			'12-24 Hour Response Time',
+			'Dedicated Onboarding Specialist',
+			'30-Day Money-Back Guarantee',
+			'14-Day Free Trial (No Credit Card)'
+		],
+		perfectFor: [
+			'Agencies managing multiple client sites',
+			'Businesses with multiple brands',
+			'Entrepreneurs with product portfolios',
+			'Serious subscription businesses'
+		],
+		valueProposition: 'Save $295/year vs. buying 5 separate Starter licenses ($495 total)',
+		cta: 'Start 14-Day Free Trial',
+		ctaLink: '#',
+		accentColor: 'blue',
+		popular: false
+	},
+	{
+		name: 'AGENCY',
+		price: '$399',
+		billing: 'per year',
+		badge: 'BEST VALUE',
+		bestFor: 'Agencies & Enterprises',
+		tagline: 'Unlimited power for agencies and high-volume businesses',
+		description:
+			'Our most comprehensive plan for agencies, developers, and enterprises. Manage up to 50 client sites with VIP support, advanced features, and maximum flexibility.',
+		features: [
+			'Everything in PROFESSIONAL, PLUS:',
+			'50 Site Licenses',
+			'VIP Support (Priority Queue)',
+			'Priority Phone & Video Call Support',
+			'4-12 Hour Response Time',
+			'Dedicated Account Manager',
+			'Custom Feature Requests Consideration',
+			'Advanced Training Sessions',
+			'Quarterly Business Reviews',
+			'Migration Assistance',
+			'Full White-Label Capabilities',
+			'Custom Branding Options',
+			'Advanced Reporting & Analytics',
+			'Enterprise Security Features'
+		],
+		license: [
+			'50 Site Licenses',
+			'1 Year of Updates',
+			'VIP Support (Email, Chat, Phone, Video)',
+			'Complete Documentation Suite',
+			'4-12 Hour Response Time',
+			'Dedicated Account Manager',
+			'Quarterly Strategy Calls',
+			'30-Day Money-Back Guarantee',
+			'14-Day Free Trial (No Credit Card)'
+		],
+		perfectFor: [
+			'Digital Agencies',
+			'SaaS Development Companies',
+			'Enterprise E-commerce Businesses',
+			'Multi-Brand Corporations',
+			'Development Teams'
+		],
+		valueProposition:
+			'Save $4,551/year vs. buying 50 Starter licenses ($4,950 total). That is over 91% savings!',
+		enterpriseNote: 'Need more than 50 sites? Contact us for custom enterprise pricing.',
+		cta: 'Start 14-Day Free Trial',
+		ctaLink: '#',
+		accentColor: 'amber',
+		popular: false
+	}
+];
+
+const proFeatures = [
+	{
+		icon: 'calendar',
+		title: 'Daily & Weekly Billing Periods',
+		description:
+			'Charge customers on daily or weekly cycles for high-frequency services like meal deliveries, daily content, or weekly coaching.',
+		roi: 'Charge premium for weekly services, increase cash flow with daily billing',
+		value: 'Perfect for subscription boxes, meal plans, fitness programs, and coaching services'
+	},
+	{
+		icon: 'refresh',
+		title: 'Smart Dunning Management',
+		description:
+			'Automatically retry failed payments with intelligent scheduling. Recover 40-70% of failed payments that would otherwise be lost.',
+		roi: 'Recover $40-70 for every $100 in failed payments*',
+		example:
+			'$10,000/month x 5% failure = $500 failed. 60% recovery = $300/month saved = $3,600/year',
+		features: [
+			'Automatic retry on failure',
+			'Progressive retry intervals (1, 3, 7 days)',
+			'Smart scheduling optimization',
+			'Automatic dunning emails'
+		]
+	},
+	{
+		icon: 'mail',
+		title: 'Advanced Email Campaigns (7 Types)',
+		description:
+			'Beyond basic transactional emails, Pro includes 7 advanced campaigns designed to maximize customer lifetime value and reduce churn.',
+		roi: '1000 customers x $50/month = $50K MRR. 10% churn reduction = $5K MRR saved = $60K ARR*',
+		campaigns: [
+			'Trial Ending Reminders (3-email sequence: 7, 3, 1 days)',
+			'Renewal Reminders (14, 7, 3 days before)',
+			'Payment Failed Recovery (3-attempt sequence)',
+			'Re-engagement for Paused Subscriptions',
+			'Win-back for Cancelled Customers',
+			'Upgrade Incentive Emails',
+			'Customer Milestone Celebrations'
+		]
+	},
+	{
+		icon: 'bar-chart',
+		title: 'Revenue Forecasting & Projections',
+		description: 'Predict future revenue with MRR/ARR projections based on historical data, growth trends, and churn rates.',
+		roi: 'Show investors projected growth, plan resources based on data',
+		features: [
+			'MRR and ARR projections',
+			'Growth trend analysis',
+			'Churn impact modeling',
+			'Scenario planning tools',
+			'Visual projection charts'
+		]
+	},
+	{
+		icon: 'brain',
+		title: 'AI-Powered Churn Prediction',
+		description:
+			'Machine learning model analyzes 15+ subscription and engagement signals to calculate churn probability for every customer.',
+		roi: 'Reduce churn by 25-40% with proactive intervention*',
+		example: '1000 customers x $50 x 10% churn = $5K lost/month. 30% reduction = $1.5K saved/month = $18K/year',
+		howItWorks: [
+			'Churn probability score (0-1)',
+			'At-risk customer dashboard',
+			'Automated intervention triggers',
+			'Retention campaign suggestions'
+		]
+	},
+	{
+		icon: 'arrow-up',
+		title: 'Plan Upgrades & Downgrades',
+		description:
+			'Allow customers to upgrade or downgrade subscription plans mid-cycle with automatic proration calculations.',
+		roi: '20-30% of customers upgrade when given easy options*',
+		features: ['Automatic proration math', 'Instant plan switching', 'Credit/charge prorated amounts', 'Seamless customer experience']
+	},
+	{
+		icon: 'users',
+		title: 'Team Collaboration Tools',
+		description:
+			'Allow your team to collaborate on subscription management with role-based permissions and activity logs.',
+		plans: ['Starter: 3 team members', 'Professional: Unlimited team members', 'Agency: Unlimited + advanced roles'],
+		features: ['User roles (Admin, Manager, Support)', 'Activity audit logs', 'Team notifications', 'Collaborative notes']
+	},
+	{
+		icon: 'link',
+		title: 'Webhook Integrations',
+		description:
+			'Connect Recurio to thousands of apps via webhooks. Trigger actions in Zapier, Make.com, Slack, CRM systems, and more.',
+		roi: 'Replace Zapier costs ($20-50/month), eliminate manual data entry',
+		useCases: [
+			'Send new subscriptions to CRM',
+			'Notify Slack on cancellations',
+			'Update Google Sheets with revenue',
+			'Trigger custom automations'
+		],
+		features: ['15+ webhook events', 'HMAC signature verification', 'Retry logic for failed webhooks', 'Real-time delivery']
+	}
+];
+
+const faqs = [
+	{
+		question: 'Do I need a credit card for the free trial?',
+		answer:
+			"No! Our 14-day free trial for Starter, Professional, and Agency plans requires no credit card. Just download the plugin, activate your trial, and explore all premium features risk-free. You'll only be charged if you decide to continue after the trial ends."
+	},
+	{
+		question: 'What happens after my trial ends?',
+		answer:
+			"After your 14-day trial, you can choose to purchase a license to continue using PRO features. If you don't purchase, your PRO features will be disabled. No data is lost and you can purchase anytime to re-enable PRO features."
+	},
+	{
+		question: 'Can I upgrade or downgrade my plan later?',
+		answer:
+			'Absolutely! You can upgrade from Starter to Professional or Agency at any time. We will prorate the difference and apply it to your new plan. Downgrades take effect at your next renewal date. Contact support@wprecurio.com for assistance.'
+	},
+	{
+		question: 'What payment methods do you accept?',
+		answer:
+			'We accept all major credit cards (Visa, Mastercard, American Express, Discover) via Stripe, and PayPal. All payments are secure and PCI-compliant.'
+	},
+	{
+		question: 'Is there a money-back guarantee?',
+		answer:
+			"Yes! All paid plans include a 30-day money-back guarantee. If you're not satisfied for any reason within 30 days of purchase, contact us for a full refund - no questions asked."
+	},
+	{
+		question: 'What happens when my license expires after 1 year?',
+		answer:
+			"After 1 year, you can choose to renew your license at the same price to continue receiving updates and support. If you don't renew, your plugin will continue working with all features you've already activated, but you won't receive new updates, security patches, or support. You can renew anytime."
+	},
+	{
+		question: 'Can I use my license on multiple sites?',
+		answer:
+			'Starter: 1 site only | Professional: Up to 5 sites | Agency: Up to 50 sites. Each license can only be activated on the number of sites specified in your plan. Need more? Upgrade to a higher tier or contact us for custom enterprise pricing.'
+	},
+	{
+		question: 'Can I transfer my license to a different domain?',
+		answer:
+			'Yes! You can transfer your license to a different domain at any time. Simply deactivate the license from your old site and activate it on your new site. If you need help, our support team can assist you.'
+	},
+	{
+		question: 'Are there any hidden fees or additional costs?',
+		answer:
+			'No! The price you see is the price you pay. There are no setup fees, no hidden costs, and no surprises. The only additional cost would be if you choose to renew your license after 1 year (optional).'
+	},
+	{
+		question: "What's included in \"support\"?",
+		answer:
+			'Starter: Priority email support with 24-48 hour response time, premium documentation | Professional: Email + live chat support with 12-24 hour response, onboarding assistance, video tutorials | Agency: VIP support with 4-12 hour response, email + chat + phone + video calls, dedicated account manager, quarterly strategy sessions'
+	},
+	{
+		question: 'What happens to my data if I cancel?',
+		answer:
+			'All your subscription data, customer information, and settings remain in your WordPress database. If you cancel your paid plan, you can re-upgrade anytime to regain access to PRO features.'
+	},
+	{
+		question: 'How do updates work?',
+		answer:
+			'Updates are delivered directly through your WordPress dashboard, just like any other plugin. Paid users receive updates for 1 year from purchase date. After 1 year, you can renew to continue receiving updates.'
+	}
+];
+---
+
+<section data-pricing-page>
+	<div class="relative min-h-[50vh] bg-gradient-to-b from-slate-50 to-white pt-32 pb-20 overflow-hidden">
+		<div
+			class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.05),transparent_50%),radial-gradient(circle_at_70%_60%,rgba(59,130,246,0.05),transparent_50%)]"
+		></div>
+		<div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+			<div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-full mb-6">
+				<span class="inline-flex" set:html={iconSvg('check', 'w-4 h-4 text-emerald-600')}></span>
+				<span class="text-sm font-medium text-emerald-900">30-Day Money-Back Guarantee</span>
+			</div>
+
+			<h1 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">Simple, Transparent Pricing</h1>
+			<p class="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+				Choose the perfect plan for your business. All plans include a 14-day free trial with no credit card required.
+			</p>
+
+			<div class="flex flex-wrap justify-center gap-6 mt-12">
+				<div class="flex items-center gap-2 text-slate-700">
+					<div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+						<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-emerald-600')}></span>
+					</div>
+					<span class="text-sm font-medium">No Setup Fees</span>
+				</div>
+				<div class="flex items-center gap-2 text-slate-700">
+					<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+						<span class="inline-flex" set:html={iconSvg('shield', 'w-5 h-5 text-blue-600')}></span>
+					</div>
+					<span class="text-sm font-medium">Secure & Reliable</span>
+				</div>
+				<div class="flex items-center gap-2 text-slate-700">
+					<div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+						<span class="inline-flex" set:html={iconSvg('refresh', 'w-5 h-5 text-amber-600')}></span>
+					</div>
+					<span class="text-sm font-medium">Cancel Anytime</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="max-w-4xl mx-auto px-6 lg:px-8 -mt-8 mb-8 hidden" data-checkout-error>
+		<div class="bg-red-50 border border-red-200 rounded-xl p-4 flex items-center gap-3">
+			<div class="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold">!</div>
+			<p class="text-sm text-red-700" data-checkout-error-text></p>
+		</div>
+	</div>
+
+	<div class="max-w-4xl mx-auto px-6 lg:px-8 -mt-8 mb-8 hidden" data-checkout-success>
+		<div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center gap-3">
+			<div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center">
+				<span class="inline-flex" set:html={iconSvg('check', 'w-4 h-4 text-emerald-600')}></span>
+			</div>
+			<p class="text-sm text-emerald-700">
+				Checkout completed successfully. Thank you for choosing Recurio!
+			</p>
+		</div>
+	</div>
+
+	<div class="bg-white py-20" id="pricing-cards">
+		<div class="max-w-7xl mx-auto px-6 lg:px-8">
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+				{pricingTiers.map((tier, index) => {
+					const colors = colorClasses[tier.accentColor];
+					const planId = tier.name.toLowerCase();
+
+					return (
+						<div
+							key={index}
+							class={`relative bg-white rounded-2xl border-2 overflow-visible transition-all duration-300 hover:shadow-2xl ${
+								tier.popular ? `${colors.ring} border-transparent shadow-xl scale-105` : 'border-slate-200 hover:border-slate-300'
+							}`}
+						>
+							{tier.badge && (
+								<div class="absolute -top-4 left-0 right-0 flex justify-center z-10">
+									<div class={`${colors.badge} px-5 py-2 rounded-full text-xs font-bold text-white shadow-lg flex items-center gap-1.5`}>
+										{tier.badge === 'MOST POPULAR' && (
+											<span class="inline-flex" set:html={iconSvg('star', 'w-3.5 h-3.5')}></span>
+										)}
+										{tier.badge === 'BEST VALUE' && (
+											<span class="inline-flex" set:html={iconSvg('award', 'w-3.5 h-3.5')}></span>
+										)}
+										{tier.badge}
+									</div>
+								</div>
+							)}
+
+							<div class="p-8 pt-12">
+								<div class="text-center mb-8 pb-8 border-b border-slate-200">
+									<h3 class="text-sm font-bold text-slate-500 tracking-wider mb-3">{tier.name}</h3>
+									<div class="mb-2">
+										<span class="text-5xl font-bold text-slate-900">{tier.price}</span>
+										<span class="text-slate-600 text-base ml-2">{tier.billing}</span>
+									</div>
+									<p class="text-sm text-slate-600 font-medium">{tier.bestFor}</p>
+								</div>
+
+								<div class="mb-6">
+									<p class="text-slate-900 font-semibold text-base mb-2">{tier.tagline}</p>
+									<p class="text-slate-600 text-sm leading-relaxed">{tier.description}</p>
+								</div>
+
+								<button
+									type="button"
+									data-checkout={planId}
+									data-label={tier.cta}
+									data-loading-label="Processing..."
+									class={`block w-full text-center py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 mb-2 ${colors.button} text-white shadow-md hover:shadow-lg transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none`}
+								>
+									<span data-checkout-default>{tier.cta}</span>
+									<span data-checkout-loading class="hidden items-center justify-center gap-2">
+										<span class="inline-flex" set:html={iconSvg('loader', 'w-5 h-5 animate-spin')}></span>
+										Processing...
+									</span>
+								</button>
+
+								<p class="text-center text-sm text-slate-500 mb-8">
+									Or{' '}
+									<button
+										type="button"
+										data-checkout={planId}
+										data-label="buy now"
+										data-loading-label="Processing..."
+										class={`${colors.link} hover:underline font-medium disabled:opacity-70`}
+									>
+										<span data-checkout-default>buy now</span>
+										<span data-checkout-loading class="hidden items-center justify-center gap-2">
+											<span class="inline-flex" set:html={iconSvg('loader', 'w-4 h-4 animate-spin')}></span>
+											Processing...
+										</span>
+									</button>
+								</p>
+
+								<div class="mb-6">
+									<h4 class="font-semibold text-slate-900 mb-4 text-sm">What's Included:</h4>
+									<ul class="space-y-3">
+										{tier.features.slice(0, 8).map((feature, idx) => (
+											<li key={idx} class="flex items-start gap-3 text-sm">
+												<div class={`${colors.iconBg} rounded-full p-0.5 mt-0.5 flex-shrink-0`}>
+													<span class="inline-flex" set:html={iconSvg('check', `w-3.5 h-3.5 ${colors.iconText}`)}></span>
+												</div>
+												<span class="text-slate-700 leading-snug">{feature}</span>
+											</li>
+										))}
+										{tier.features.length > 8 && (
+											<li class="text-sm text-slate-500 pl-6 font-medium">+ {tier.features.length - 8} more features</li>
+										)}
+									</ul>
+								</div>
+
+								{tier.roi && (
+									<div class={`p-4 rounded-xl border ${colors.roiBg} mb-6`}>
+										<div class="flex items-center gap-2 mb-3">
+											<span class="inline-flex" set:html={iconSvg('bar-chart', `w-4 h-4 ${colors.iconText}`)}></span>
+											<h4 class={`font-semibold text-sm ${colors.roiText}`}>ROI Highlights</h4>
+										</div>
+										<ul class="space-y-2">
+											{tier.roi.map((item, idx) => (
+												<li key={idx} class={`text-xs ${colors.roiText} flex items-start gap-2`}>
+													<span class="flex-shrink-0 mt-0.5">-</span>
+													<span>{item}</span>
+												</li>
+											))}
+										</ul>
+										<p class="text-xs text-slate-500 mt-3 italic">*Based on industry averages</p>
+									</div>
+								)}
+
+								{tier.valueProposition && (
+									<div class="p-4 bg-slate-50 border border-slate-200 rounded-xl mb-4">
+										<p class="text-sm font-semibold text-slate-900">{tier.valueProposition}</p>
+									</div>
+								)}
+
+								{tier.popularText && (
+									<p class="text-center text-sm text-slate-600 mb-4 italic">"{tier.popularText}"</p>
+								)}
+
+								{tier.enterpriseNote && (
+									<p class="text-center text-xs text-slate-500 mt-4 italic">{tier.enterpriseNote}</p>
+								)}
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-gradient-to-b from-slate-50 to-white py-20">
+		<div class="max-w-7xl mx-auto px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-4">
+					<span class="inline-flex" set:html={iconSvg('zap', 'w-4 h-4 text-blue-600')}></span>
+					<span class="text-sm font-medium text-blue-900">Premium Features</span>
+				</div>
+				<h2 class="text-4xl font-bold text-slate-900 mb-4">Features That Pay for Themselves</h2>
+				<p class="text-xl text-slate-600 max-w-3xl mx-auto">
+					Powerful tools designed to increase revenue, reduce churn, and save you time
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				{proFeatures.map((feature, index) => (
+					<div
+						key={index}
+						class="group bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
+					>
+						<div class="w-12 h-12 bg-slate-100 group-hover:bg-emerald-100 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300">
+							<span
+								class="inline-flex"
+								set:html={iconSvg(feature.icon, 'w-6 h-6 text-slate-600 group-hover:text-emerald-600 transition-colors duration-300')}
+							></span>
+						</div>
+						<h3 class="text-base font-bold text-slate-900 mb-2">{feature.title}</h3>
+						<p class="text-sm text-slate-600 mb-4 leading-relaxed">{feature.description}</p>
+
+						{feature.roi && (
+							<div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg mb-3">
+								<p class="text-xs font-semibold text-emerald-900 flex items-start gap-2">
+									<span class="inline-flex" set:html={iconSvg('bar-chart', 'w-3.5 h-3.5 mt-0.5 flex-shrink-0')}></span>
+									<span>{feature.roi}</span>
+								</p>
+							</div>
+						)}
+
+						{feature.features && (
+							<ul class="space-y-2">
+								{feature.features.map((item, idx) => (
+									<li key={idx} class="text-xs text-slate-600 flex items-start gap-2">
+										<span class="inline-flex" set:html={iconSvg('check', 'w-3 h-3 text-emerald-600 flex-shrink-0 mt-0.5')}></span>
+										<span>{item}</span>
+									</li>
+								))}
+							</ul>
+						)}
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-white py-20">
+		<div class="max-w-4xl mx-auto px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-full mb-4">
+					<span class="inline-flex" set:html={iconSvg('help', 'w-4 h-4 text-slate-600')}></span>
+					<span class="text-sm font-medium text-slate-900">FAQ</span>
+				</div>
+				<h2 class="text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+				<p class="text-lg text-slate-600">Everything you need to know about our pricing</p>
+			</div>
+
+			<div class="space-y-3">
+				{faqs.map((faq, index) => (
+					<div
+						key={index}
+						class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors"
+					>
+						<button
+							type="button"
+							data-faq-button
+							aria-expanded="false"
+							class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-slate-50 transition-colors group"
+						>
+							<span class="font-semibold text-slate-900 pr-8 group-hover:text-emerald-600 transition-colors">{faq.question}</span>
+							<div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-emerald-100 flex items-center justify-center flex-shrink-0 transition-all duration-300">
+								<svg class="w-4 h-4 text-slate-600 group-hover:text-emerald-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</div>
+						</button>
+
+						<div data-faq-panel class="px-6 pb-5 text-slate-600 border-t border-slate-100 pt-4 leading-relaxed hidden">
+							{faq.answer}
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-slate-50 py-16">
+		<div class="max-w-7xl mx-auto px-6 lg:px-8">
+			<h3 class="text-2xl font-bold text-center text-slate-900 mb-12">Why Thousands of Businesses Trust Recurio</h3>
+
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+				<div class="text-center group">
+					<div class="w-16 h-16 bg-white border-2 border-slate-200 group-hover:border-emerald-300 rounded-xl flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:shadow-lg">
+						<span class="inline-flex" set:html={iconSvg('shield', 'w-7 h-7 text-slate-600 group-hover:text-emerald-600 transition-colors')}></span>
+					</div>
+					<h4 class="font-semibold text-sm text-slate-900 mb-1">30-Day Money-Back</h4>
+					<p class="text-xs text-slate-600">Full refund guarantee</p>
+				</div>
+
+				<div class="text-center group">
+					<div class="w-16 h-16 bg-white border-2 border-slate-200 group-hover:border-blue-300 rounded-xl flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:shadow-lg">
+						<svg class="w-7 h-7 text-slate-600 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+							/>
+						</svg>
+					</div>
+					<h4 class="font-semibold text-sm text-slate-900 mb-1">Secure Payments</h4>
+					<p class="text-xs text-slate-600">Stripe & PayPal</p>
+				</div>
+
+				<div class="text-center group">
+					<div class="w-16 h-16 bg-white border-2 border-slate-200 group-hover:border-emerald-300 rounded-xl flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:shadow-lg">
+						<span class="inline-flex" set:html={iconSvg('check', 'w-7 h-7 text-slate-600 group-hover:text-emerald-600 transition-colors')}></span>
+					</div>
+					<h4 class="font-semibold text-sm text-slate-900 mb-1">WordPress Approved</h4>
+					<p class="text-xs text-slate-600">On WordPress.org</p>
+				</div>
+
+				<div class="text-center group">
+					<div class="w-16 h-16 bg-white border-2 border-slate-200 group-hover:border-blue-300 rounded-xl flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:shadow-lg">
+						<span class="inline-flex" set:html={iconSvg('refresh', 'w-7 h-7 text-slate-600 group-hover:text-blue-600 transition-colors')}></span>
+					</div>
+					<h4 class="font-semibold text-sm text-slate-900 mb-1">Regular Updates</h4>
+					<p class="text-xs text-slate-600">Always improving</p>
+				</div>
+
+				<div class="text-center group">
+					<div class="w-16 h-16 bg-white border-2 border-slate-200 group-hover:border-amber-300 rounded-xl flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:shadow-lg">
+						<span class="inline-flex" set:html={iconSvg('award', 'w-7 h-7 text-slate-600 group-hover:text-amber-600 transition-colors')}></span>
+					</div>
+					<h4 class="font-semibold text-sm text-slate-900 mb-1">GPL Licensed</h4>
+					<p class="text-xs text-slate-600">Own it forever</p>
+				</div>
+
+				<div class="text-center group">
+					<div class="w-16 h-16 bg-white border-2 border-slate-200 group-hover:border-emerald-300 rounded-xl flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:shadow-lg">
+						<svg class="w-7 h-7 text-slate-600 group-hover:text-emerald-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+							/>
+						</svg>
+					</div>
+					<h4 class="font-semibold text-sm text-slate-900 mb-1">No Hidden Costs</h4>
+					<p class="text-xs text-slate-600">Transparent pricing</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="relative bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-500 py-20 overflow-hidden">
+		<div
+			class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_60%)]"
+		></div>
+		<div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+			<h2 class="text-4xl font-bold text-white mb-4">Ready to Grow Your Subscription Business?</h2>
+			<p class="text-xl text-white/90 mb-8">Try any plan with a 14-day free trial. No credit card required.</p>
+
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<button
+					type="button"
+					data-checkout="starter"
+					data-label="Start 14-Day Free Trial"
+					data-loading-label="Processing..."
+					class="px-8 py-4 bg-white hover:bg-slate-50 text-blue-600 font-bold rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 inline-flex items-center justify-center shadow-lg disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+				>
+					<span data-checkout-default class="inline-flex items-center gap-2">
+						<span class="inline-flex" set:html={iconSvg('zap', 'w-5 h-5')}></span>
+						Start 14-Day Free Trial
+					</span>
+					<span data-checkout-loading class="hidden items-center justify-center gap-2">
+						<span class="inline-flex" set:html={iconSvg('loader', 'w-5 h-5 animate-spin')}></span>
+						Processing...
+					</span>
+				</button>
+				<a
+					href="#pricing-cards"
+					class="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg inline-flex items-center justify-center border-2 border-white"
+				>
+					View All Plans
+				</a>
+			</div>
+
+			<p class="text-white/70 mt-8 text-sm">
+				Still have questions? <a href="https://help.wprecurio.com/ticket/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white/90 hover:underline font-medium">Contact our sales team</a> or <a href="https://help.wprecurio.com/docs/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white/90 hover:underline font-medium">view documentation</a>
+			</p>
+		</div>
+	</div>
+</section>
+
+<script type="module">
+	const page = document.querySelector('[data-pricing-page]');
+	if (!page) {
+		throw new Error('Pricing page root not found.');
+	}
+
+	const errorBox = page.querySelector('[data-checkout-error]');
+	const errorText = page.querySelector('[data-checkout-error-text]');
+	const successBox = page.querySelector('[data-checkout-success]');
+	const buttons = page.querySelectorAll('[data-checkout]');
+	const faqButtons = page.querySelectorAll('[data-faq-button]');
+
+	const storeId = import.meta.env.VITE_LEMONSQUEEZY_STORE_ID || '';
+	const variants = {
+		starter: import.meta.env.VITE_LEMONSQUEEZY_STARTER_VARIANT_ID || '',
+		professional: import.meta.env.VITE_LEMONSQUEEZY_PROFESSIONAL_VARIANT_ID || '',
+		agency: import.meta.env.VITE_LEMONSQUEEZY_AGENCY_VARIANT_ID || ''
+	};
+
+	const setError = (message) => {
+		if (errorBox && errorText) {
+			errorText.textContent = message;
+			errorBox.classList.remove('hidden');
+		}
+		if (successBox) {
+			successBox.classList.add('hidden');
+		}
+	};
+
+	const clearError = () => {
+		if (errorBox) {
+			errorBox.classList.add('hidden');
+		}
+	};
+
+	const setButtonLoading = (button, isLoading) => {
+		const defaultLabel = button.querySelector('[data-checkout-default]');
+		const loadingLabel = button.querySelector('[data-checkout-loading]');
+		if (isLoading) {
+			button.setAttribute('disabled', 'disabled');
+			if (defaultLabel) {
+				defaultLabel.classList.add('hidden');
+			}
+			if (loadingLabel) {
+				loadingLabel.classList.remove('hidden');
+				loadingLabel.classList.add('inline-flex');
+			}
+		} else {
+			button.removeAttribute('disabled');
+			if (defaultLabel) {
+				defaultLabel.classList.remove('hidden');
+			}
+			if (loadingLabel) {
+				loadingLabel.classList.add('hidden');
+				loadingLabel.classList.remove('inline-flex');
+			}
+		}
+	};
+
+	const buildCheckoutUrl = (variantId) => {
+		return `https://checkout.lemon.squeezy.com/checkout/buy/${variantId}?embed=1&media=0`;
+	};
+
+	const openOverlay = (url, onClose) => {
+		const overlay = document.createElement('div');
+		overlay.className = 'fixed inset-0 z-50 bg-slate-900/60 flex items-center justify-center p-4';
+		overlay.innerHTML = `
+			<div class="relative w-full max-w-3xl h-[80vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+				<button type="button" class="absolute right-4 top-4 z-10 text-slate-500 hover:text-slate-700" data-overlay-close>
+					<svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+					</svg>
+				</button>
+				<iframe class="w-full h-full" src="${url}" title="Checkout"></iframe>
+			</div>
+		`;
+
+		const close = () => {
+			overlay.remove();
+			onClose();
+		};
+
+		overlay.addEventListener('click', (event) => {
+			if (event.target === overlay) {
+				close();
+			}
+		});
+
+		overlay.querySelector('[data-overlay-close]')?.addEventListener('click', close);
+		document.addEventListener(
+			'keydown',
+			(event) => {
+				if (event.key === 'Escape') {
+					close();
+				}
+			},
+			{ once: true }
+		);
+
+		document.body.appendChild(overlay);
+	};
+
+	let activeButton = null;
+
+	buttons.forEach((button) => {
+		button.addEventListener('click', (event) => {
+			event.preventDefault();
+			clearError();
+
+			const planId = button.dataset.checkout;
+			if (!planId) {
+				setError('Plan not found.');
+				return;
+			}
+
+			if (!storeId) {
+				setError('Payment system not configured. Please set VITE_LEMONSQUEEZY_STORE_ID in your .env file.');
+				return;
+			}
+
+			const variantId = variants[planId];
+			if (!variantId) {
+				setError(`Variant ID not configured for ${planId}. Please add it to your .env file.`);
+				return;
+			}
+
+			if (activeButton) {
+				setButtonLoading(activeButton, false);
+			}
+
+			activeButton = button;
+			setButtonLoading(button, true);
+
+			const url = buildCheckoutUrl(variantId);
+			openOverlay(url, () => {
+				setButtonLoading(button, false);
+				activeButton = null;
+			});
+		});
+	});
+
+	faqButtons.forEach((button) => {
+		const panel = button.parentElement?.querySelector('[data-faq-panel]');
+		if (!panel) {
+			return;
+		}
+
+		button.addEventListener('click', () => {
+			const isOpen = button.getAttribute('aria-expanded') === 'true';
+			button.setAttribute('aria-expanded', (!isOpen).toString());
+			panel.classList.toggle('hidden', isOpen);
+		});
+	});
+
+	const url = new URL(window.location.href);
+	if (url.searchParams.get('checkout') === 'success' && successBox) {
+		successBox.classList.remove('hidden');
+	}
+</script>

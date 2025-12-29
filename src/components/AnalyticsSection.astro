@@ -1,0 +1,449 @@
+---
+const metrics = [
+	{
+		icon: 'trending',
+		title: 'Monthly Recurring Revenue',
+		change: '+18%',
+		description: 'Track your recurring revenue in real time',
+		colorFrom: '#90D144',
+		colorTo: '#7BC135',
+		chartData: [40, 55, 48, 65, 72, 68, 85, 92],
+	},
+	{
+		icon: 'pie',
+		title: 'Churn Rate & Retention',
+		change: '-0.8%',
+		description: 'Identify and prevent customer churn',
+		colorFrom: '#13B8A6',
+		colorTo: '#0D9488',
+		chartType: 'pie',
+		retention: 95.8,
+	},
+	{
+		icon: 'calendar',
+		title: 'Revenue Forecasting',
+		change: 'Next Month',
+		description: 'Predict growth with AI-powered insights',
+		colorFrom: '#093865',
+		colorTo: '#13B8A6',
+		chartData: [65, 72, 68, 85, 92, 88, 95, 102],
+	},
+	{
+		icon: 'dollar',
+		title: 'Customer Lifetime Value',
+		change: '+12%',
+		description: 'Measure customer worth over time',
+		colorFrom: '#90D144',
+		colorTo: '#13B8A6',
+		progress: 75,
+	},
+];
+
+const iconSvg = (type, className) => {
+	if (type === 'trending') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 7-7"></path><path d="M21 7v6h-6"></path></svg>`;
+	}
+	if (type === 'pie') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12A9 9 0 1 1 12 3v9z"></path><path d="M21 12h-9V3"></path></svg>`;
+	}
+	if (type === 'calendar') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`;
+	}
+	return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path></svg>`;
+};
+---
+
+<section data-analytics class="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
+	<div class="absolute inset-0">
+		<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-[#90D144]/5 to-transparent rounded-full blur-3xl"></div>
+		<div class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-gradient-to-tr from-[#13B8A6]/5 to-transparent rounded-full blur-3xl"></div>
+		<div
+			class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px]"
+			style="background-image: radial-gradient(circle, rgba(9, 56, 101, 0.02) 1px, transparent 1px); background-size: 40px 40px;"
+		></div>
+	</div>
+
+	<div class="absolute inset-0 opacity-30">
+		<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+			<defs>
+				<pattern id="analytics-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+					<path d="M10 10 L30 40 L50 25 L70 50 L90 30" stroke="url(#analytics-gradient)" stroke-width="2" fill="none" opacity="0.15"/>
+				</pattern>
+				<linearGradient id="analytics-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+					<stop offset="0%" stop-color="#90D144" />
+					<stop offset="100%" stop-color="#13B8A6" />
+				</linearGradient>
+			</defs>
+			<rect width="100%" height="100%" fill="url(#analytics-pattern)" />
+		</svg>
+	</div>
+
+	<div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-16 lg:mb-20" data-animate="fade-up">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#90D144]/20 mb-6">
+				<svg viewBox="0 0 24 24" class="w-4 h-4 text-[#093865]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M12 3v18"></path>
+					<path d="M5 12h14"></path>
+				</svg>
+				<span class="text-sm font-bold text-[#093865]">ANALYTICS & INSIGHTS</span>
+			</div>
+			<h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#093865] mb-6 leading-tight">
+				Know Your Numbers
+			</h2>
+			<p class="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+				Stop guessing. Start growing with real-time insights into MRR, churn, renewals, and customer lifetime value.
+			</p>
+		</div>
+
+		<div class="transition-all duration-1000 delay-300" data-animate="fade-up">
+			<div class="relative mb-12">
+				<div class="absolute inset-0 bg-gradient-to-r from-[#90D144]/10 via-[#13B8A6]/10 to-[#90D144]/10 rounded-3xl blur-3xl"></div>
+				<div class="relative bg-white rounded-3xl shadow-2xl border border-gray-200 p-8 lg:p-12">
+					<div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+						<div>
+							<h3 class="text-2xl font-bold text-[#093865] mb-2">Revenue Dashboard</h3>
+							<p class="text-gray-600">Real-time performance metrics</p>
+						</div>
+						<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#90D144]/20">
+							<div class="w-2 h-2 rounded-full bg-[#90D144] animate-pulse"></div>
+							<span class="text-sm font-semibold text-[#093865]">Live</span>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+						<div class="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100">
+							<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#90D144] to-[#7BC135] mb-3">
+								<span class="inline-flex" set:html={iconSvg('trending', 'w-6 h-6 text-white')}></span>
+							</div>
+							<div class="text-3xl font-bold text-[#093865] mb-1" data-animate-mrr>$0</div>
+							<div class="text-sm text-gray-600 mb-2">MRR</div>
+							<div class="inline-flex items-center gap-1 text-xs font-semibold text-[#90D144]">
+								<svg viewBox="0 0 24 24" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="m3 17 6-6 4 4 7-7"></path>
+									<path d="M21 7v6h-6"></path>
+								</svg>
+								<span data-animate-growth>+0%</span>
+							</div>
+						</div>
+
+						<div class="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100">
+							<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#13B8A6] to-[#0D9488] mb-3">
+								<svg viewBox="0 0 24 24" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M16 11a4 4 0 1 0-8 0"></path>
+									<path d="M4 20v-1a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v1"></path>
+									<circle cx="12" cy="7" r="3"></circle>
+								</svg>
+							</div>
+							<div class="text-3xl font-bold text-[#093865] mb-1">1,247</div>
+							<div class="text-sm text-gray-600 mb-2">Active Subs</div>
+							<div class="inline-flex items-center gap-1 text-xs font-semibold text-[#90D144]">
+								<svg viewBox="0 0 24 24" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="m3 17 6-6 4 4 7-7"></path>
+									<path d="M21 7v6h-6"></path>
+								</svg>
+								+124
+							</div>
+						</div>
+
+						<div class="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100">
+							<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#093865] to-[#13B8A6] mb-3">
+								<svg viewBox="0 0 24 24" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<circle cx="12" cy="12" r="10"></circle>
+									<path d="M12 6v6l4 2"></path>
+								</svg>
+							</div>
+							<div class="text-3xl font-bold text-[#093865] mb-1" data-animate-churn>0%</div>
+							<div class="text-sm text-gray-600 mb-2">Churn Rate</div>
+							<div class="inline-flex items-center gap-1 text-xs font-semibold text-[#90D144]">
+								<svg viewBox="0 0 24 24" class="w-3 h-3 rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="m3 17 6-6 4 4 7-7"></path>
+									<path d="M21 7v6h-6"></path>
+								</svg>
+								-0.8%
+							</div>
+						</div>
+
+						<div class="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100">
+							<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#90D144] to-[#13B8A6] mb-3">
+								<span class="inline-flex" set:html={iconSvg('dollar', 'w-6 h-6 text-white')}></span>
+							</div>
+							<div class="text-3xl font-bold text-[#093865] mb-1" data-animate-ltv>$0</div>
+							<div class="text-sm text-gray-600 mb-2">Avg LTV</div>
+							<div class="inline-flex items-center gap-1 text-xs font-semibold text-[#90D144]">
+								<svg viewBox="0 0 24 24" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="m3 17 6-6 4 4 7-7"></path>
+									<path d="M21 7v6h-6"></path>
+								</svg>
+								+12%
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
+						<div class="flex items-center justify-between mb-6">
+							<h4 class="text-lg font-bold text-[#093865]">Revenue Growth Trend</h4>
+							<div class="flex items-center gap-4 text-sm">
+								<div class="flex items-center gap-2">
+									<div class="w-3 h-3 rounded-full bg-gradient-to-r from-[#90D144] to-[#7BC135]"></div>
+									<span class="text-gray-600">This Year</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<div class="w-3 h-3 rounded-full bg-gray-300"></div>
+									<span class="text-gray-600">Last Year</span>
+								</div>
+							</div>
+						</div>
+						<div class="h-48 flex items-end justify-between gap-2" data-bars>
+							{[45, 52, 48, 68, 75, 72, 88, 95, 92, 105, 112, 118].map((height, idx) => (
+								<div class="flex-1 flex flex-col items-center gap-2">
+									<div
+										class="bar-current w-full rounded-t-lg bg-gradient-to-t from-[#90D144] to-[#7BC135] transition-all duration-1000 ease-out shadow-lg hover:shadow-xl hover:scale-105"
+										style={`height: 0%; transition-delay: ${idx * 100}ms;`}
+										data-height={height}
+									></div>
+									<div
+										class="bar-prev w-full rounded-t-lg bg-gray-200 transition-all duration-1000 ease-out"
+										style={`height: 0%; transition-delay: ${idx * 100}ms;`}
+										data-height={height * 0.7}
+									></div>
+								</div>
+							))}
+						</div>
+						<div class="flex items-center justify-between mt-4 text-xs text-gray-500">
+							<span>Jan</span>
+							<span>Feb</span>
+							<span>Mar</span>
+							<span>Apr</span>
+							<span>May</span>
+							<span>Jun</span>
+							<span>Jul</span>
+							<span>Aug</span>
+							<span>Sep</span>
+							<span>Oct</span>
+							<span>Nov</span>
+							<span>Dec</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+				{metrics.map((metric, idx) => (
+					<div
+						class="metric-card group relative bg-white/95 backdrop-blur-xl rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20"
+						style={`transition-delay: ${600 + idx * 150}ms;`}
+						data-color-from={metric.colorFrom}
+						data-color-to={metric.colorTo}
+					>
+						<div
+							class="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500"
+							style={`background-image: linear-gradient(to bottom right, ${metric.colorFrom}, ${metric.colorTo});`}
+						></div>
+
+						<div class="relative">
+							<div class="flex items-start justify-between mb-4">
+								<div class="w-12 h-12 rounded-xl bg-gradient-to-br shadow-lg group-hover:scale-110 transition-transform duration-500" style={`background-image: linear-gradient(to bottom right, ${metric.colorFrom}, ${metric.colorTo});`}>
+									<span class="inline-flex w-full h-full items-center justify-center" set:html={iconSvg(metric.icon, 'w-6 h-6 text-white')}></span>
+								</div>
+								<div class="px-2 py-1 rounded-lg text-xs font-bold" data-change>
+									{metric.change}
+								</div>
+							</div>
+
+							<div class="mb-4">
+								<div class="text-3xl font-bold text-[#093865] mb-1">{metric.title === 'Monthly Recurring Revenue' ? '$47,250' : metric.title === 'Customer Lifetime Value' ? '$1,850' : metric.title === 'Churn Rate & Retention' ? '4.2%' : '$55,755'}</div>
+								<div class="text-sm font-semibold text-gray-700 mb-2">{metric.title}</div>
+								<div class="text-xs text-gray-600">{metric.description}</div>
+							</div>
+
+							{metric.chartData && (
+								<div class="h-16 flex items-end justify-between gap-1">
+									{metric.chartData.map((height, i) => (
+										<div
+											class="flex-1 rounded-t bg-gradient-to-t transition-all duration-1000 ease-out"
+											style={`height: 0%; transition-delay: ${800 + idx * 150 + i * 50}ms; background-image: linear-gradient(to top, ${metric.colorFrom}, ${metric.colorTo});`}
+											data-height={height}
+										></div>
+									))}
+								</div>
+							)}
+
+							{metric.chartType === 'pie' && metric.retention && (
+								<div class="flex items-center justify-center">
+									<div class="relative w-24 h-24">
+										<svg class="transform -rotate-90" viewBox="0 0 100 100">
+											<circle cx="50" cy="50" r="40" fill="none" stroke="#E5E7EB" stroke-width="12"></circle>
+											<circle
+												cx="50"
+												cy="50"
+												r="40"
+												fill="none"
+												stroke="url(#gradient)"
+												stroke-width="12"
+												data-retention={metric.retention}
+												stroke-dasharray="0 251.327"
+												class="transition-all duration-1000 ease-out"
+											></circle>
+											<defs>
+												<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+													<stop offset="0%" stop-color="#13B8A6" />
+													<stop offset="100%" stop-color="#0D9488" />
+												</linearGradient>
+											</defs>
+										</svg>
+										<div class="absolute inset-0 flex items-center justify-center">
+											<span class="text-lg font-bold text-[#093865]">{metric.retention}%</span>
+										</div>
+									</div>
+								</div>
+							)}
+
+							{metric.progress && (
+								<div class="relative h-3 bg-gray-200 rounded-full overflow-hidden">
+									<div
+										class="absolute inset-y-0 left-0 bg-gradient-to-r rounded-full transition-all duration-1000 ease-out"
+										style={`width: 0%; transition-delay: ${800 + idx * 150}ms; background-image: linear-gradient(to right, ${metric.colorFrom}, ${metric.colorTo});`}
+										data-progress={metric.progress}
+									></div>
+								</div>
+							)}
+						</div>
+
+						<div
+							class="absolute bottom-0 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl"
+							style={`background-image: linear-gradient(to right, ${metric.colorFrom}, ${metric.colorTo});`}
+						></div>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<div class="mt-16 text-center" data-animate="fade-up" style="transition-delay: 1000ms;">
+			<div class="relative inline-flex flex-col items-center gap-4 px-8 py-6 rounded-2xl bg-gradient-to-br from-[#093865] to-[#13B8A6] shadow-xl">
+				<div class="absolute inset-0 bg-gradient-to-r from-[#90D144]/20 via-transparent to-[#90D144]/20 rounded-2xl blur-xl"></div>
+				<div class="relative">
+					<p class="text-lg text-white max-w-2xl">
+						All analytics update in real-time. Make decisions based on live data, not yesterday's numbers.
+					</p>
+					<div class="flex items-center justify-center gap-3 mt-4">
+						<div class="w-2 h-2 rounded-full bg-[#90D144] animate-pulse"></div>
+						<span class="text-sm font-semibold text-white">Live Dashboard Active</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		[data-animate] {
+			opacity: 0;
+			transform: translateY(32px);
+			transition: opacity 700ms ease, transform 700ms ease;
+		}
+
+		[data-analytics].is-visible [data-animate] {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.metric-card {
+			opacity: 0;
+			transform: translateY(48px);
+			transition: opacity 700ms ease, transform 700ms ease;
+		}
+
+		[data-analytics].is-visible .metric-card {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
+
+	<script type="module">
+		const section = document.querySelector("[data-analytics]");
+		if (!section) {
+			throw new Error("Analytics section not found");
+		}
+
+		const mrrEl = section.querySelector("[data-animate-mrr]");
+		const growthEl = section.querySelector("[data-animate-growth]");
+		const churnEl = section.querySelector("[data-animate-churn]");
+		const ltvEl = section.querySelector("[data-animate-ltv]");
+		const bars = section.querySelectorAll("[data-height]");
+		const progressBars = section.querySelectorAll("[data-progress]");
+		const pieRing = section.querySelector("[data-retention]");
+		const changeBadges = section.querySelectorAll("[data-change]");
+
+		const setChangeStyles = () => {
+			changeBadges.forEach((badge) => {
+				const text = badge.textContent || "";
+				if (text.startsWith("+")) {
+					badge.classList.add("bg-[#90D144]/10", "text-[#90D144]");
+				} else if (text.startsWith("-")) {
+					badge.classList.add("bg-red-50", "text-red-600");
+				} else {
+					badge.classList.add("bg-gray-100", "text-gray-600");
+				}
+			});
+		};
+
+		const animateNumbers = () => {
+			const target = { mrr: 47250, growth: 18, churn: 4.2, ltv: 1850 };
+			const duration = 2000;
+			const steps = 60;
+			const stepDuration = duration / steps;
+			let currentStep = 0;
+
+			const interval = setInterval(() => {
+				currentStep += 1;
+				const progress = currentStep / steps;
+				const mrr = Math.floor(target.mrr * progress);
+				const growth = Math.floor(target.growth * progress * 10) / 10;
+				const churn = Math.floor(target.churn * progress * 10) / 10;
+				const ltv = Math.floor(target.ltv * progress);
+
+				if (mrrEl) mrrEl.textContent = `$${mrr.toLocaleString()}`;
+				if (growthEl) growthEl.textContent = `+${growth}%`;
+				if (churnEl) churnEl.textContent = `${churn}%`;
+				if (ltvEl) ltvEl.textContent = `$${ltv.toLocaleString()}`;
+
+				if (currentStep >= steps) {
+					clearInterval(interval);
+				}
+			}, stepDuration);
+		};
+
+		const animateBars = () => {
+			bars.forEach((bar) => {
+				const height = bar.getAttribute("data-height");
+				if (height) {
+					bar.style.height = `${height}%`;
+				}
+			});
+			progressBars.forEach((bar) => {
+				const value = bar.getAttribute("data-progress");
+				if (value) {
+					bar.style.width = `${value}%`;
+				}
+			});
+			if (pieRing) {
+				const retention = Number(pieRing.getAttribute("data-retention") || "0");
+				const dash = retention * 2.51327;
+				pieRing.setAttribute("stroke-dasharray", `${dash} 251.327`);
+			}
+		};
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					section.classList.add("is-visible");
+					animateNumbers();
+					animateBars();
+					setChangeStyles();
+					observer.disconnect();
+				}
+			},
+			{ threshold: 0.1 },
+		);
+		observer.observe(section);
+	</script>
+</section>
