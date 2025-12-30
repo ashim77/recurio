@@ -1,0 +1,43 @@
+---
+const { faqs, iconSvg } = Astro.props;
+---
+
+<div class="bg-white py-20">
+	<div class="max-w-4xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-12">
+			<div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-full mb-4">
+				<span class="inline-flex" set:html={iconSvg('help', 'w-4 h-4 text-slate-600')}></span>
+				<span class="text-sm font-medium text-slate-900">FAQ</span>
+			</div>
+			<h2 class="text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+			<p class="text-lg text-slate-600">Everything you need to know about our pricing</p>
+		</div>
+
+		<div class="space-y-3">
+			{faqs.map((faq, index) => (
+				<div
+					key={index}
+					class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors"
+				>
+					<button
+						type="button"
+						data-faq-button
+						aria-expanded="false"
+						class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-slate-50 transition-colors group"
+					>
+						<span class="font-semibold text-slate-900 pr-8 group-hover:text-emerald-600 transition-colors">{faq.question}</span>
+						<div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-emerald-100 flex items-center justify-center flex-shrink-0 transition-all duration-300">
+							<svg class="w-4 h-4 text-slate-600 group-hover:text-emerald-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</div>
+					</button>
+
+					<div data-faq-panel class="px-6 pb-5 text-slate-600 border-t border-slate-100 pt-4 leading-relaxed hidden">
+						{faq.answer}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</div>

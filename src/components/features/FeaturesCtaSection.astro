@@ -1,0 +1,23 @@
+---
+const { iconSvg } = Astro.props;
+---
+
+<div class="py-16 bg-gradient-to-br from-[#E6F4F1] to-[#F0F9FF]">
+	<div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+		<h2 class="text-3xl lg:text-4xl font-bold text-[#093865] mb-4">
+			Start Building Your Subscription Business Today
+		</h2>
+		<p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+			Join thousands of businesses using Recurio to manage their subscriptions and grow recurring revenue.
+		</p>
+		<div class="flex flex-col sm:flex-row gap-4 justify-center">
+			<a href="/pricing" class="group px-8 py-4 bg-gradient-to-r from-[#093865] to-[#13B8A6] text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#13B8A6]/30 flex items-center justify-center gap-2">
+				Get Started Free
+				<span class="inline-flex" set:html={iconSvg('arrow-right', 'w-5 h-5 group-hover:translate-x-1 transition-transform')}></span>
+			</a>
+			<button class="px-8 py-4 bg-white text-[#093865] font-bold rounded-full transition-all duration-300 border-2 border-[#093865] hover:bg-[#093865] hover:text-white">
+				Contact Sales
+			</button>
+		</div>
+	</div>
+</div>

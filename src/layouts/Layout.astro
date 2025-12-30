@@ -4,7 +4,12 @@ import Header from '../components/Header.astro';
 import TopBarAnnouncement from '../components/TopBarAnnouncement.astro';
 import Footer from '../components/Footer.astro';
 
-const { forceSolidHeader = false } = Astro.props;
+const {
+	forceSolidHeader = false,
+	title = 'Recurio - WordPress Subscription Management Plugin',
+	description = 'Recurio is the ultimate WooCommerce subscription management plugin. Automate recurring billing, reduce churn, and grow your subscription revenue with powerful analytics and seamless integrations.',
+	canonicalUrl = 'https://recurio.com/',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -12,15 +17,12 @@ const { forceSolidHeader = false } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta
-			name="description"
-			content="Recurio is the ultimate WooCommerce subscription management plugin. Automate recurring billing, reduce churn, and grow your subscription revenue with powerful analytics and seamless integrations."
-		/>
+		<meta name="description" content={description} />
 		<meta
 			name="keywords"
 			content="WooCommerce subscriptions, recurring billing, subscription management, WordPress plugin, payment automation, subscription analytics, churn reduction, recurring revenue"
 		/>
-		<link rel="canonical" href="https://recurio.com/" />
+		<link rel="canonical" href={canonicalUrl} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,24 +32,18 @@ const { forceSolidHeader = false } = Astro.props;
 		/>
 		<link rel="icon" type="image/png" href="/images/recurio-favicon.png" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://recurio.com/" />
-		<meta property="og:title" content="Recurio - WordPress Subscription Management Plugin" />
-		<meta
-			property="og:description"
-			content="Recurio is the ultimate WooCommerce subscription management plugin. Automate recurring billing, reduce churn, and grow your subscription revenue with powerful analytics and seamless integrations."
-		/>
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<meta property="og:image" content="https://recurio.com/images/recurio-logo.png" />
 		<meta property="og:site_name" content="Recurio" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content="https://recurio.com/" />
-		<meta name="twitter:title" content="Recurio - WordPress Subscription Management Plugin" />
-		<meta
-			name="twitter:description"
-			content="Recurio is the ultimate WooCommerce subscription management plugin. Automate recurring billing, reduce churn, and grow your subscription revenue with powerful analytics and seamless integrations."
-		/>
+		<meta name="twitter:url" content={canonicalUrl} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="https://recurio.com/images/recurio-logo.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Recurio - WordPress Subscription Management Plugin</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<TopBarAnnouncement />

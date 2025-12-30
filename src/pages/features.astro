@@ -1,8 +1,28 @@
 ---
+import FeaturesCategoryFilter from '../components/features/FeaturesCategoryFilter.astro';
+import FeaturesComparisonSection from '../components/features/FeaturesComparisonSection.astro';
+import FeaturesCtaSection from '../components/features/FeaturesCtaSection.astro';
+import FeaturesFreeSection from '../components/features/FeaturesFreeSection.astro';
+import FeaturesHero from '../components/features/FeaturesHero.astro';
+import FeaturesProSection from '../components/features/FeaturesProSection.astro';
+import FeaturesScripts from '../components/features/FeaturesScripts.astro';
+import { iconSvg, categories, freeFeatures, proFeatures } from '../components/features/featuresData.js';
 import Layout from '../layouts/Layout.astro';
-import FeaturesPage from '../components/FeaturesPage.astro';
 ---
 
-<Layout>
-	<FeaturesPage />
+<Layout
+	forceSolidHeader={true}
+	title="Features - Recurio"
+	description="Explore all Recurio features for subscription management, billing automation, customer experience, analytics, and integrations."
+	canonicalUrl="https://recurio.com/features"
+>
+	<section data-features-page class="min-h-screen bg-white">
+		<FeaturesHero iconSvg={iconSvg} />
+		<FeaturesCategoryFilter categories={categories} iconSvg={iconSvg} />
+		<FeaturesFreeSection freeFeatures={freeFeatures} iconSvg={iconSvg} />
+		<FeaturesProSection proFeatures={proFeatures} iconSvg={iconSvg} />
+		<FeaturesComparisonSection iconSvg={iconSvg} />
+		<FeaturesCtaSection iconSvg={iconSvg} />
+	</section>
+	<FeaturesScripts />
 </Layout>

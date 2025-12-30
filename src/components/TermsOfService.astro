@@ -1,0 +1,597 @@
+---
+const iconSvg = (type, className) => {
+	if (type === 'file-text') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>`;
+	}
+	if (type === 'scale') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2 4 4 .5-3 3 .8 4.5-3.8-2-3.8 2 .8-4.5-3-3 4-.5 2-4z"/><path d="M3 21h18"/><path d="M12 7v14"/></svg>`;
+	}
+	if (type === 'alert-circle') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>`;
+	}
+	if (type === 'shield') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
+	}
+	if (type === 'user-check') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M16 11a4 4 0 0 1 4 4v2"/><path d="M3 21v-2a4 4 0 0 1 4-4h4"/><path d="m16 7 2 2 4-4"/></svg>`;
+	}
+	if (type === 'ban') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>`;
+	}
+	if (type === 'refresh') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>`;
+	}
+	if (type === 'gavel') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 13-7 7"/><path d="m9 8 7 7"/><path d="M7 2h5l4 4-5 5-4-4z"/><path d="M3 21h18"/></svg>`;
+	}
+	return '';
+};
+---
+
+<div class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
+	<div class="max-w-4xl mx-auto px-6">
+		<div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+			<div class="flex items-center gap-3 mb-6">
+				<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#093865] to-[#13B8A6] flex items-center justify-center">
+					<span class="inline-flex" set:html={iconSvg('scale', 'w-6 h-6 text-white')}></span>
+				</div>
+				<div>
+					<h1 class="text-4xl font-bold text-[#093865]">Terms of Service</h1>
+				</div>
+			</div>
+			<p class="text-gray-500 mb-8">Last Updated: October 27, 2025</p>
+
+			<div class="prose prose-lg max-w-none policy-content">
+				<p class="text-gray-600 leading-relaxed">
+					Welcome to Recurio! These Terms of Service ("Terms", "Agreement") govern your use of the Recurio WordPress plugin ("Plugin", "Service") provided by Recurio ("we", "us", "our") through our website at wprecurio.com.
+				</p>
+
+				<div class="bg-gradient-to-r from-[#093865]/5 to-[#13B8A6]/5 border-l-4 border-[#13B8A6] p-6 rounded-lg my-8 policy-block">
+					<p class="text-gray-700 font-medium">
+						<strong>Important:</strong> By downloading, installing, or using Recurio, you agree to be bound by these Terms. If you do not agree to these Terms, do not use our Service.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('file-text', 'w-6 h-6 text-[#13B8A6]')}></span>
+					1. Acceptance of Terms
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					By accessing or using Recurio, you confirm that:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>You are at least 18 years old or have reached the age of majority in your jurisdiction</li>
+					<li>You have the legal authority to enter into this Agreement</li>
+					<li>You will comply with all applicable laws and regulations</li>
+					<li>You have read, understood, and agree to be bound by these Terms</li>
+					<li>You accept our Privacy Policy and Refund Policy</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('user-check', 'w-6 h-6 text-[#13B8A6]')}></span>
+					2. License Grant
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">2.1 Free Version</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Download and install the free version of Recurio from WordPress.org</li>
+					<li>Use the Plugin on unlimited websites</li>
+					<li>Modify the Plugin for your personal or commercial use</li>
+					<li>Access updates and security patches</li>
+				</ul>
+				<p class="text-gray-600 leading-relaxed mt-4">
+					The free version is licensed under the <strong>GNU General Public License v2 (GPL-2.0)</strong> as required by WordPress.org guidelines.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">2.2 Premium Version</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					If you purchase a Premium license, you receive:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Single Site License</strong>: Use on one (1) website/domain</li>
+					<li><strong>5-Site License</strong>: Use on up to five (5) websites/domains</li>
+					<li><strong>Unlimited License</strong>: Use on unlimited websites/domains you own or manage</li>
+					<li><strong>Priority Support</strong>: Access to premium support channels</li>
+					<li><strong>Automatic Updates</strong>: Receive updates for the duration of your license</li>
+					<li><strong>Premium Features</strong>: Access to all PRO features as described on our website</li>
+				</ul>
+
+				<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-lg my-6 policy-block">
+					<p class="text-gray-700">
+						<strong>License Restrictions:</strong> Premium licenses are non-transferable. You may not resell, redistribute, or sublicense the Premium version without explicit written permission.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('user-check', 'w-6 h-6 text-[#13B8A6]')}></span>
+					3. Account Registration
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					To access certain features, you may need to create an account. You agree to:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Provide accurate, current, and complete information during registration</li>
+					<li>Maintain and promptly update your account information</li>
+					<li>Keep your password secure and confidential</li>
+					<li>Notify us immediately of any unauthorized access to your account</li>
+					<li>Accept responsibility for all activities under your account</li>
+					<li>Not share your account credentials with others</li>
+					<li>Not create multiple accounts to circumvent license restrictions</li>
+				</ul>
+
+				<p class="text-gray-600 leading-relaxed mt-4">
+					We reserve the right to suspend or terminate accounts that violate these Terms or engage in fraudulent activity.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('shield', 'w-6 h-6 text-[#13B8A6]')}></span>
+					4. Acceptable Use Policy
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					You agree to use Recurio only for lawful purposes. You must NOT:
+				</p>
+
+				<div class="grid md:grid-cols-2 gap-4 my-6">
+					<div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+						<h4 class="font-semibold text-red-900 mb-2 flex items-center gap-2">
+							<span class="inline-flex" set:html={iconSvg('ban', 'w-4 h-4')}></span>
+							Prohibited Activities
+						</h4>
+						<ul class="text-sm text-gray-700 space-y-1 list-disc pl-5">
+							<li>Violate any laws or regulations</li>
+							<li>Infringe intellectual property rights</li>
+							<li>Distribute malware or viruses</li>
+							<li>Attempt to hack or breach security</li>
+							<li>Reverse engineer the Plugin (Premium)</li>
+							<li>Remove copyright or license notices</li>
+						</ul>
+					</div>
+					<div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+						<h4 class="font-semibold text-red-900 mb-2 flex items-center gap-2">
+							<span class="inline-flex" set:html={iconSvg('ban', 'w-4 h-4')}></span>
+							Additional Restrictions
+						</h4>
+						<ul class="text-sm text-gray-700 space-y-1 list-disc pl-5">
+							<li>Use for illegal subscriptions or services</li>
+							<li>Process fraudulent transactions</li>
+							<li>Harass or spam customers</li>
+							<li>Exceed license usage limits</li>
+							<li>Share premium license keys</li>
+							<li>Create derivative products for sale</li>
+						</ul>
+					</div>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('gavel', 'w-6 h-6 text-[#13B8A6]')}></span>
+					5. Payment Terms
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">5.1 Pricing</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Premium license pricing is displayed on our website. All prices are in US Dollars (USD) unless otherwise stated. We reserve the right to change pricing at any time, but changes will not affect existing active licenses.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">5.2 Payment Processing</h3>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Payments are processed securely through third-party payment processors (Stripe, PayPal)</li>
+					<li>All sales are final unless covered by our Refund Policy</li>
+					<li>You are responsible for all applicable taxes</li>
+					<li>Payment must be made in advance of service delivery</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">5.3 Subscription Renewals</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Premium licenses are sold as annual subscriptions:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Automatic Renewal</strong>: Subscriptions renew automatically unless cancelled</li>
+					<li><strong>Renewal Notice</strong>: You'll receive email notifications before renewal</li>
+					<li><strong>Cancellation</strong>: Cancel anytime to prevent future charges</li>
+					<li><strong>No Refunds on Renewals</strong>: Renewal charges are non-refundable (cancel before renewal date)</li>
+					<li><strong>Grace Period</strong>: 14-day grace period after expiration to renew at current rate</li>
+				</ul>
+
+				<div class="bg-gradient-to-r from-[#093865]/5 to-[#13B8A6]/5 border border-[#13B8A6] p-4 rounded-lg my-6 policy-block">
+					<p class="text-gray-700">
+						<strong>License Expiration:</strong> After your license expires, Premium features will be disabled, but your data remains intact. You can reactivate by renewing your license.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('refresh', 'w-6 h-6 text-[#13B8A6]')}></span>
+					6. Updates and Support
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">6.1 Software Updates</h3>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Free Version</strong>: Updates available through WordPress.org indefinitely</li>
+					<li><strong>Premium Version</strong>: Automatic updates while license is active</li>
+					<li><strong>Security Patches</strong>: Critical security updates provided to all users</li>
+					<li><strong>Feature Updates</strong>: New features added regularly (Premium only)</li>
+				</ul>
+				<p class="text-gray-600 leading-relaxed mt-4 italic">
+					We strongly recommend keeping your Plugin updated for security and optimal performance.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">6.2 Customer Support</h3>
+				<div class="overflow-x-auto my-6">
+					<table class="min-w-full border-collapse border border-gray-300">
+						<thead class="bg-gradient-to-r from-[#093865] to-[#13B8A6] text-white">
+							<tr>
+								<th class="border border-gray-300 px-4 py-3 text-left">Feature</th>
+								<th class="border border-gray-300 px-4 py-3 text-left">Free Version</th>
+								<th class="border border-gray-300 px-4 py-3 text-left">Premium Version</th>
+							</tr>
+						</thead>
+						<tbody class="text-gray-600">
+							<tr class="bg-gray-50">
+								<td class="border border-gray-300 px-4 py-3">Support Channel</td>
+								<td class="border border-gray-300 px-4 py-3">WordPress.org Forums</td>
+								<td class="border border-gray-300 px-4 py-3">Priority Email Support</td>
+							</tr>
+							<tr>
+								<td class="border border-gray-300 px-4 py-3">Response Time</td>
+								<td class="border border-gray-300 px-4 py-3">Best Effort</td>
+								<td class="border border-gray-300 px-4 py-3">24-48 hours</td>
+							</tr>
+							<tr class="bg-gray-50">
+								<td class="border border-gray-300 px-4 py-3">Documentation</td>
+								<td class="border border-gray-300 px-4 py-3">Included</td>
+								<td class="border border-gray-300 px-4 py-3">Included + Premium Guides</td>
+							</tr>
+							<tr>
+								<td class="border border-gray-300 px-4 py-3">Setup Assistance</td>
+								<td class="border border-gray-300 px-4 py-3">Self-Service</td>
+								<td class="border border-gray-300 px-4 py-3">Priority Setup Help</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('scale', 'w-6 h-6 text-[#13B8A6]')}></span>
+					7. Intellectual Property Rights
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">7.1 Our Rights</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Recurio and all related materials are protected by copyright, trademark, and other intellectual property laws. We retain all rights, title, and interest in:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>The Recurio Plugin (code, design, features)</li>
+					<li>Recurio name, logo, and branding</li>
+					<li>Documentation, tutorials, and marketing materials</li>
+					<li>Website content and design</li>
+					<li>All proprietary algorithms and technologies</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">7.2 Your Rights</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					You retain ownership of:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Your customer data and subscription information</li>
+					<li>Content you create using the Plugin</li>
+					<li>Your business data and analytics</li>
+					<li>Customizations you make (subject to GPL for free version)</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">7.3 Trademark Usage</h3>
+				<p class="text-gray-600 leading-relaxed">
+					You may not use the "Recurio" name or logo in a way that suggests endorsement, partnership, or affiliation without our written permission.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('shield', 'w-6 h-6 text-[#13B8A6]')}></span>
+					8. Data and Privacy
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Your use of Recurio is also governed by our Privacy Policy. Key points:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Data Ownership</strong>: You own all customer and subscription data</li>
+					<li><strong>Data Storage</strong>: All data is stored in your WordPress database</li>
+					<li><strong>Data Security</strong>: You are responsible for securing your WordPress installation</li>
+					<li><strong>Analytics</strong>: We may collect anonymized usage data to improve the Plugin</li>
+					<li><strong>GDPR/CCPA Compliance</strong>: The Plugin includes features to help you comply with data protection laws</li>
+					<li><strong>Data Export</strong>: You can export your data at any time</li>
+				</ul>
+
+				<div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg my-6 policy-block">
+					<p class="text-gray-700">
+						<strong>Important:</strong> We do not have access to your customer data, payment information, or subscription details stored on your WordPress site. You are the data controller.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('alert-circle', 'w-6 h-6 text-[#13B8A6]')}></span>
+					9. Disclaimers and Warranties
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">9.1 "As Is" Provision</h3>
+				<div class="bg-gray-100 border border-gray-300 p-6 rounded-lg my-6 policy-block">
+					<p class="text-gray-800 font-semibold uppercase mb-4">
+						Important Legal Notice
+					</p>
+					<p class="text-gray-700 leading-relaxed">
+						THE PLUGIN IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+					</p>
+				</div>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">9.2 No Guarantees</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We do not warrant or guarantee that:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>The Plugin will meet your specific requirements</li>
+					<li>The Plugin will be uninterrupted, timely, secure, or error-free</li>
+					<li>The results obtained from using the Plugin will be accurate or reliable</li>
+					<li>Any errors or defects will be corrected</li>
+					<li>The Plugin will be compatible with all hosting environments</li>
+					<li>The Plugin will work with all third-party plugins or themes</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">9.3 Your Responsibility</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					You are solely responsible for:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Ensuring the Plugin meets your business requirements before use</li>
+					<li>Testing the Plugin in a staging environment before production use</li>
+					<li>Maintaining regular backups of your website and database</li>
+					<li>Complying with payment processing regulations (PCI-DSS, etc.)</li>
+					<li>Ensuring legal compliance for subscription services in your jurisdiction</li>
+					<li>Securing your WordPress installation and server environment</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('shield', 'w-6 h-6 text-[#13B8A6]')}></span>
+					10. Limitation of Liability
+				</h2>
+
+				<div class="bg-gray-100 border border-gray-300 p-6 rounded-lg my-6 policy-block">
+					<p class="text-gray-800 font-semibold uppercase mb-4">
+						Limited Liability
+					</p>
+					<p class="text-gray-700 leading-relaxed mb-4">
+						TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL RECURIO, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR:
+					</p>
+					<ul class="list-disc pl-6 space-y-2 text-gray-700">
+						<li>Any indirect, incidental, special, consequential, or punitive damages</li>
+						<li>Loss of profits, revenue, data, or use</li>
+						<li>Loss of business or business opportunities</li>
+						<li>Damage to business reputation or goodwill</li>
+						<li>Computer failure or malfunction</li>
+						<li>Any other commercial damages or losses</li>
+					</ul>
+					<p class="text-gray-700 leading-relaxed mt-4">
+						<strong>Maximum Liability:</strong> Our total liability shall not exceed the amount you paid for the Plugin in the 12 months preceding the claim.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">11. Indemnification</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					You agree to indemnify, defend, and hold harmless Recurio and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Your use or misuse of the Plugin</li>
+					<li>Your violation of these Terms</li>
+					<li>Your violation of any rights of another party</li>
+					<li>Your violation of any applicable laws or regulations</li>
+					<li>Any content or data you process through the Plugin</li>
+					<li>Disputes with your customers or third parties</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('ban', 'w-6 h-6 text-[#13B8A6]')}></span>
+					12. Termination
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">12.1 Termination by You</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					You may terminate your use of Recurio at any time by:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Uninstalling the Plugin from your website</li>
+					<li>Cancelling your Premium subscription (if applicable)</li>
+					<li>Deleting your account</li>
+				</ul>
+				<p class="text-gray-600 leading-relaxed mt-4">
+					Termination does not entitle you to a refund unless covered by our Refund Policy.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">12.2 Termination by Us</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We may suspend or terminate your access to the Plugin if:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>You violate these Terms</li>
+					<li>You fail to pay applicable fees</li>
+					<li>You engage in fraudulent activity</li>
+					<li>You misuse the Plugin or our support services</li>
+					<li>Required by law or court order</li>
+					<li>We discontinue the Plugin (with 90 days' notice)</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">12.3 Effect of Termination</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Upon termination:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Your license to use Premium features immediately ceases</li>
+					<li>You must stop using the Premium version</li>
+					<li>You may continue using the free version (if applicable)</li>
+					<li>Your data remains in your WordPress database</li>
+					<li>No refunds will be provided unless required by law</li>
+					<li>Sections of these Terms that should survive termination will remain in effect</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">13. Changes to Terms</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We reserve the right to modify these Terms at any time. When we make changes:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>We will update the "Last Updated" date at the top</li>
+					<li>For material changes, we will notify you via email or prominent website notice</li>
+					<li>Changes become effective 30 days after notification</li>
+					<li>Continued use after changes constitutes acceptance</li>
+				</ul>
+
+				<p class="text-gray-600 leading-relaxed mt-4">
+					If you do not agree to the modified Terms, you must stop using the Plugin and cancel your subscription before the changes take effect.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">14. Third-Party Services</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Recurio integrates with third-party services (payment gateways, email providers, etc.). Your use of these services is governed by their respective terms and policies. We are not responsible for:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>The availability or reliability of third-party services</li>
+					<li>Third-party fees, charges, or pricing changes</li>
+					<li>Third-party terms, policies, or practices</li>
+					<li>Loss or damage resulting from third-party service issues</li>
+					<li>Data handling by third-party services</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('gavel', 'w-6 h-6 text-[#13B8A6]')}></span>
+					15. Governing Law and Dispute Resolution
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">15.1 Governing Law</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">15.2 Dispute Resolution</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					In the event of any dispute arising from these Terms:
+				</p>
+				<ol class="list-decimal pl-6 space-y-2 text-gray-600">
+					<li><strong>Informal Resolution</strong>: Contact us at legal@wprecurio.com to resolve the dispute informally</li>
+					<li><strong>Mediation</strong>: If informal resolution fails, both parties agree to attempt mediation</li>
+					<li><strong>Binding Arbitration</strong>: Unresolved disputes will be settled by binding arbitration</li>
+					<li><strong>Class Action Waiver</strong>: You agree to bring claims individually, not as part of a class action</li>
+				</ol>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">15.3 Jurisdiction</h3>
+				<p class="text-gray-600 leading-relaxed">
+					You agree to submit to the personal jurisdiction of courts located in [Your Jurisdiction] for any actions not subject to arbitration.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">16. General Provisions</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">16.1 Entire Agreement</h3>
+				<p class="text-gray-600 leading-relaxed">
+					These Terms, together with our Privacy Policy and Refund Policy, constitute the entire agreement between you and Recurio regarding the use of the Plugin.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">16.2 Severability</h3>
+				<p class="text-gray-600 leading-relaxed">
+					If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">16.3 Waiver</h3>
+				<p class="text-gray-600 leading-relaxed">
+					Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">16.4 Assignment</h3>
+				<p class="text-gray-600 leading-relaxed">
+					You may not assign or transfer these Terms without our written consent. We may assign our rights and obligations without restriction.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">16.5 Force Majeure</h3>
+				<p class="text-gray-600 leading-relaxed">
+					We shall not be liable for any failure to perform our obligations due to circumstances beyond our reasonable control.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">17. Contact Information</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					For questions, concerns, or notices regarding these Terms, please contact us:
+				</p>
+
+				<div class="bg-gradient-to-br from-[#093865] to-[#13B8A6] text-white p-6 rounded-xl shadow-lg policy-block">
+					<h3 class="font-bold text-xl mb-4">Get in Touch</h3>
+					<div class="space-y-3">
+						<div class="flex items-start gap-3">
+							<span class="inline-flex" set:html={iconSvg('file-text', 'w-5 h-5 mt-1 flex-shrink-0')}></span>
+							<div>
+								<p class="font-semibold">General Inquiries</p>
+								<p class="text-white/90">support@wprecurio.com</p>
+							</div>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="inline-flex" set:html={iconSvg('scale', 'w-5 h-5 mt-1 flex-shrink-0')}></span>
+							<div>
+								<p class="font-semibold">Legal Department</p>
+								<p class="text-white/90">legal@wprecurio.com</p>
+							</div>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="inline-flex" set:html={iconSvg('gavel', 'w-5 h-5 mt-1 flex-shrink-0')}></span>
+							<div>
+								<p class="font-semibold">Website</p>
+								<p class="text-white/90">https://wprecurio.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-gradient-to-r from-[#093865]/5 to-[#13B8A6]/5 border-l-4 border-[#13B8A6] p-6 rounded-lg mt-12 policy-block">
+					<h3 class="font-bold text-[#093865] mb-2">Acknowledgment and Acceptance</h3>
+					<p class="text-gray-700 leading-relaxed mb-4">
+						By downloading, installing, or using Recurio, you acknowledge that:
+					</p>
+					<ul class="list-disc pl-6 space-y-1 text-gray-700">
+						<li>You have read and understood these Terms of Service</li>
+						<li>You agree to be bound by these Terms</li>
+						<li>You have the authority to enter into this Agreement</li>
+						<li>You will comply with all applicable laws and regulations</li>
+					</ul>
+					<p class="text-gray-700 mt-4 font-semibold">
+						If you do not agree to these Terms, do not use Recurio.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.policy-content h2 {
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.policy-content h3 {
+		margin-top: 1.75rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.policy-content p {
+		margin-bottom: 1rem;
+	}
+
+	.policy-content ul,
+	.policy-content ol {
+		margin-bottom: 1rem;
+	}
+
+	.policy-block {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+</style>

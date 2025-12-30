@@ -1,0 +1,94 @@
+---
+const { iconSvg, freeFeatures } = Astro.props;
+---
+
+<div
+	data-section
+	id="free-features"
+	class="py-24 bg-gradient-to-br from-white via-[#F0F9FF] to-[#E6F4F1]"
+>
+	<div class="max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#90D144]/20 mb-6">
+				<span class="inline-flex" set:html={iconSvg('check', 'w-4 h-4 text-[#90D144]')}></span>
+				<span class="text-sm font-bold text-[#093865]">FREE FOREVER</span>
+			</div>
+			<h2 class="text-4xl lg:text-5xl font-bold text-[#093865] mb-4">
+				18 Core Features
+				<span class="block mt-2 text-[#13B8A6]">Completely Free</span>
+			</h2>
+			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+				A complete subscription management system with advanced analytics, automation, and customer portal-no credit card required, no hidden fees, free forever.
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-feature-grid>
+			{freeFeatures.map((feature, idx) => (
+				<div
+					class="feature-card group relative bg-white rounded-2xl border-2 border-gray-200 hover:border-[#13B8A6] transition-all duration-500 overflow-hidden"
+					data-category={feature.category}
+					data-feature-id={feature.id}
+					style={`transition-delay: ${idx * 50}ms;`}
+				>
+					<div class={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+
+					<div class="relative p-6">
+						<div class="flex items-start justify-between mb-4">
+							<div class={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+								<span class="inline-flex" set:html={iconSvg(feature.icon, 'w-7 h-7 text-white')}></span>
+							</div>
+							<div class="px-3 py-1 bg-[#90D144]/10 rounded-full border border-[#90D144]/20">
+								<span class="text-xs font-bold text-[#90D144]">FREE</span>
+							</div>
+						</div>
+
+						<h3 class="text-xl font-bold text-[#093865] mb-2 group-hover:text-[#13B8A6] transition-colors">
+							{feature.title}
+						</h3>
+						<p class="text-sm font-semibold text-[#13B8A6] mb-3">
+							{feature.tagline}
+						</p>
+						<p class="text-gray-600 text-sm mb-4 line-clamp-3">
+							{feature.description}
+						</p>
+
+						<button
+							type="button"
+							data-expand={feature.id}
+							data-expand-default="Learn More"
+							class="flex items-center gap-2 text-[#13B8A6] font-semibold text-sm hover:gap-3 transition-all"
+						>
+							<span data-expand-label>Learn More</span>
+							<span class="inline-flex" set:html={iconSvg('chevron-down', 'w-4 h-4 transition-transform')}></span>
+						</button>
+
+						<div class="feature-details mt-6 pt-6 border-t border-gray-100 space-y-4 hidden">
+							<div>
+								<h4 class="font-bold text-[#093865] text-sm mb-2">Key Benefits:</h4>
+								<ul class="space-y-2">
+									{feature.benefits.map((benefit) => (
+										<li class="flex items-start gap-2 text-sm text-gray-600">
+											<span class="inline-flex" set:html={iconSvg('check', 'w-4 h-4 text-[#90D144] flex-shrink-0 mt-0.5')}></span>
+											<span>{benefit}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+							<div>
+								<h4 class="font-bold text-[#093865] text-sm mb-2">Features Include:</h4>
+								<ul class="space-y-2">
+									{feature.features.map((item) => (
+										<li class="flex items-start gap-2 text-sm text-gray-600">
+											<div class="w-1.5 h-1.5 rounded-full bg-[#13B8A6] flex-shrink-0 mt-1.5"></div>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</div>

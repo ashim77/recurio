@@ -1,0 +1,77 @@
+<style>
+	.feature-details.is-open {
+		display: block;
+	}
+</style>
+
+<script type="module">
+	const root = document.querySelector('[data-features-page]');
+	if (root) {
+		const buttons = root.querySelectorAll('[data-category-button]');
+		const cards = root.querySelectorAll('.feature-card');
+		const expandButtons = root.querySelectorAll('[data-expand]');
+		const scrollButtons = root.querySelectorAll('[data-scroll]');
+
+		const setActiveCategory = (category) => {
+			buttons.forEach((btn) => {
+				const isActive = btn.getAttribute('data-category-button') === category;
+				btn.classList.toggle('bg-gradient-to-r', isActive);
+				btn.classList.toggle('from-[#90D144]', isActive);
+				btn.classList.toggle('to-[#13B8A6]', isActive);
+				btn.classList.toggle('text-white', isActive);
+				btn.classList.toggle('shadow-lg', isActive);
+				btn.classList.toggle('bg-gray-100', !isActive);
+				btn.classList.toggle('text-gray-600', !isActive);
+			});
+
+			cards.forEach((card) => {
+				const cardCategory = card.getAttribute('data-category');
+				const show = category === 'all' || cardCategory === category;
+				card.classList.toggle('hidden', !show);
+			});
+		};
+
+		buttons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const category = btn.getAttribute('data-category-button') || 'all';
+				setActiveCategory(category);
+			});
+		});
+
+		expandButtons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const id = btn.getAttribute('data-expand');
+				const card = root.querySelector(`[data-feature-id="${id}"]`);
+				if (!card) return;
+				const details = card.querySelector('.feature-details');
+				const label = btn.querySelector('[data-expand-label]');
+				const icon = btn.querySelector('svg');
+				const isOpen = card.classList.contains('is-expanded');
+				card.classList.toggle('is-expanded', !isOpen);
+				if (details) {
+					details.classList.toggle('is-open', !isOpen);
+					details.classList.toggle('hidden', isOpen);
+				}
+				if (label) {
+					const defaultLabel = btn.getAttribute('data-expand-default') || 'Learn More';
+					label.textContent = isOpen ? defaultLabel : 'Show Less';
+				}
+				if (icon) {
+					icon.classList.toggle('rotate-180', !isOpen);
+				}
+			});
+		});
+
+		scrollButtons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const targetId = btn.getAttribute('data-scroll');
+				const target = document.getElementById(targetId || '');
+				if (target) {
+					target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			});
+		});
+
+		setActiveCategory('all');
+	}
+</script>

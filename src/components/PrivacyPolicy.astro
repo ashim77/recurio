@@ -1,0 +1,467 @@
+---
+const iconSvg = (type, className) => {
+	if (type === 'shield') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
+	}
+	if (type === 'lock') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
+	}
+	if (type === 'eye') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`;
+	}
+	if (type === 'database') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>`;
+	}
+	if (type === 'mail') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6 12 13 2 6"/></svg>`;
+	}
+	if (type === 'cookie') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4z"/><path d="M8 14v.01"/><path d="M12 10v.01"/><path d="M16 14v.01"/></svg>`;
+	}
+	if (type === 'user-check') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M16 11a4 4 0 0 1 4 4v2"/><path d="M3 21v-2a4 4 0 0 1 4-4h4"/><path d="m16 7 2 2 4-4"/></svg>`;
+	}
+	if (type === 'file-text') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>`;
+	}
+	return '';
+};
+---
+
+<div class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
+	<div class="max-w-4xl mx-auto px-6">
+		<div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+			<div class="flex items-center gap-3 mb-6">
+				<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#093865] to-[#13B8A6] flex items-center justify-center">
+					<span class="inline-flex" set:html={iconSvg('shield', 'w-6 h-6 text-white')}></span>
+				</div>
+				<div>
+					<h1 class="text-4xl font-bold text-[#093865]">Privacy Policy</h1>
+				</div>
+			</div>
+			<p class="text-gray-500 mb-8">Last Updated: October 27, 2025</p>
+
+			<div class="prose prose-lg max-w-none policy-content">
+				<p class="text-gray-600 leading-relaxed">
+					At Recurio ("we", "us", or "our"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our WordPress plugin and visit our website (wprecurio.com).
+				</p>
+
+				<div class="bg-gradient-to-r from-[#093865]/5 to-[#13B8A6]/5 border-l-4 border-[#13B8A6] p-6 rounded-lg my-8 policy-block">
+					<p class="text-gray-700 font-medium">
+						<strong>Your Privacy Matters:</strong> We do not sell, trade, or rent your personal information to third parties. We collect only the information necessary to provide and improve our services.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('database', 'w-6 h-6 text-[#13B8A6]')}></span>
+					Information We Collect
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">1. Information You Provide Directly</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We collect information that you voluntarily provide when you:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Create an Account</strong>: Name, email address, company name, website URL</li>
+					<li><strong>Purchase Our Plugin</strong>: Billing information, payment details (processed securely by our payment processors)</li>
+					<li><strong>Contact Support</strong>: Name, email address, correspondence content, technical information about your setup</li>
+					<li><strong>Subscribe to Newsletter</strong>: Email address, preferences</li>
+					<li><strong>Participate in Surveys</strong>: Feedback, opinions, demographic information (optional)</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">2. Information Collected Automatically</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					When you use our plugin or visit our website, we automatically collect certain information:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Usage Data</strong>: Plugin version, WordPress version, WooCommerce version, PHP version</li>
+					<li><strong>Technical Data</strong>: IP address, browser type, device information, operating system</li>
+					<li><strong>Website Analytics</strong>: Pages visited, time spent, referring URLs, click patterns</li>
+					<li><strong>Plugin Analytics</strong>: Features used, error logs, performance metrics (anonymized)</li>
+					<li><strong>Cookies and Tracking</strong>: See our Cookie Policy section below</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">3. Information from Third Parties</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We may receive information from:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Payment Processors</strong>: Transaction status, payment confirmation</li>
+					<li><strong>WordPress.org</strong>: Plugin download statistics, reviews, ratings</li>
+					<li><strong>Analytics Services</strong>: Aggregated usage statistics</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('eye', 'w-6 h-6 text-[#13B8A6]')}></span>
+					How We Use Your Information
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We use the collected information for the following purposes:
+				</p>
+
+				<div class="grid md:grid-cols-2 gap-4 my-6">
+					<div class="bg-gradient-to-br from-[#093865]/5 to-[#13B8A6]/5 p-4 rounded-lg">
+						<h4 class="font-semibold text-[#093865] mb-2">Service Delivery</h4>
+						<ul class="text-sm text-gray-600 space-y-1 list-disc pl-5">
+							<li>Provide and maintain our plugin</li>
+							<li>Process transactions and payments</li>
+							<li>Deliver customer support</li>
+							<li>Send transactional emails</li>
+						</ul>
+					</div>
+					<div class="bg-gradient-to-br from-[#093865]/5 to-[#13B8A6]/5 p-4 rounded-lg">
+						<h4 class="font-semibold text-[#093865] mb-2">Improvement and Development</h4>
+						<ul class="text-sm text-gray-600 space-y-1 list-disc pl-5">
+							<li>Analyze usage patterns</li>
+							<li>Fix bugs and errors</li>
+							<li>Develop new features</li>
+							<li>Improve performance</li>
+						</ul>
+					</div>
+					<div class="bg-gradient-to-br from-[#093865]/5 to-[#13B8A6]/5 p-4 rounded-lg">
+						<h4 class="font-semibold text-[#093865] mb-2">Communication</h4>
+						<ul class="text-sm text-gray-600 space-y-1 list-disc pl-5">
+							<li>Send updates and announcements</li>
+							<li>Respond to inquiries</li>
+							<li>Send newsletters (with consent)</li>
+							<li>Notify about security issues</li>
+						</ul>
+					</div>
+					<div class="bg-gradient-to-br from-[#093865]/5 to-[#13B8A6]/5 p-4 rounded-lg">
+						<h4 class="font-semibold text-[#093865] mb-2">Legal and Security</h4>
+						<ul class="text-sm text-gray-600 space-y-1 list-disc pl-5">
+							<li>Prevent fraud and abuse</li>
+							<li>Comply with legal obligations</li>
+							<li>Enforce terms of service</li>
+							<li>Protect user rights</li>
+						</ul>
+					</div>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('user-check', 'w-6 h-6 text-[#13B8A6]')}></span>
+					Data Sharing and Disclosure
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We do not sell your personal information. We may share your information only in the following circumstances:
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">Service Providers</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We share information with trusted third-party service providers who assist us in operating our business:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Payment Processors</strong>: Stripe, PayPal (for processing payments securely)</li>
+					<li><strong>Email Services</strong>: For sending transactional and marketing emails</li>
+					<li><strong>Analytics Tools</strong>: Google Analytics (anonymized data)</li>
+					<li><strong>Hosting Providers</strong>: For website and application hosting</li>
+					<li><strong>Customer Support Tools</strong>: For managing support tickets and communications</li>
+				</ul>
+				<p class="text-gray-600 leading-relaxed mt-4 italic">
+					All service providers are contractually obligated to protect your data and use it only for the specified purposes.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">Legal Requirements</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We may disclose your information if required to:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Comply with legal obligations, court orders, or government requests</li>
+					<li>Protect and defend our rights or property</li>
+					<li>Prevent or investigate possible wrongdoing</li>
+					<li>Protect the personal safety of users or the public</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">Business Transfers</h3>
+				<p class="text-gray-600 leading-relaxed">
+					If we are involved in a merger, acquisition, or sale of assets, your information may be transferred. We will provide notice before your information is transferred and becomes subject to a different privacy policy.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('lock', 'w-6 h-6 text-[#13B8A6]')}></span>
+					Data Security
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We implement industry-standard security measures to protect your personal information:
+				</p>
+
+				<div class="bg-gradient-to-r from-[#093865] to-[#13B8A6] text-white p-6 rounded-lg my-6 policy-block">
+					<h4 class="font-bold mb-3">Security Measures:</h4>
+					<ul class="grid md:grid-cols-2 gap-3 text-sm list-disc pl-5">
+						<li>SSL/TLS encryption for data transmission</li>
+						<li>Encrypted data storage</li>
+						<li>Regular security audits and updates</li>
+						<li>Access controls and authentication</li>
+						<li>Firewall protection</li>
+						<li>Regular backups</li>
+						<li>Employee training on data protection</li>
+						<li>Secure coding practices</li>
+					</ul>
+				</div>
+
+				<p class="text-gray-600 leading-relaxed italic">
+					While we strive to protect your personal information, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('file-text', 'w-6 h-6 text-[#13B8A6]')}></span>
+					Your Privacy Rights
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Depending on your location, you may have the following rights regarding your personal information:
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">General Rights</h3>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Access</strong>: Request a copy of the personal information we hold about you</li>
+					<li><strong>Correction</strong>: Request correction of inaccurate or incomplete information</li>
+					<li><strong>Deletion</strong>: Request deletion of your personal information ("right to be forgotten")</li>
+					<li><strong>Portability</strong>: Request transfer of your data to another service provider</li>
+					<li><strong>Restriction</strong>: Request restriction of processing of your information</li>
+					<li><strong>Objection</strong>: Object to processing of your information for specific purposes</li>
+					<li><strong>Withdraw Consent</strong>: Withdraw previously given consent at any time</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">GDPR Rights (EU/EEA Users)</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					If you are located in the European Union or European Economic Area, you have additional rights under GDPR:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Right to lodge a complaint with a supervisory authority</li>
+					<li>Right to object to automated decision-making and profiling</li>
+					<li>Right to receive clear information about data processing</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">CCPA Rights (California Users)</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA):
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Right to know what personal information is collected, used, shared, or sold</li>
+					<li>Right to delete personal information</li>
+					<li>Right to opt-out of the sale of personal information (we do not sell your data)</li>
+					<li>Right to non-discrimination for exercising your rights</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">How to Exercise Your Rights</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					To exercise any of these rights, please contact us at:
+				</p>
+				<div class="bg-gray-50 p-4 rounded-lg">
+					<p class="text-gray-700"><strong>Email:</strong> privacy@wprecurio.com</p>
+					<p class="text-gray-700"><strong>Subject Line:</strong> Privacy Rights Request</p>
+				</div>
+				<p class="text-gray-600 leading-relaxed mt-4">
+					We will respond to your request within 30 days. We may need to verify your identity before processing your request.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('cookie', 'w-6 h-6 text-[#13B8A6]')}></span>
+					Cookie Policy
+				</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We use cookies and similar tracking technologies to enhance your experience on our website.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">Types of Cookies We Use</h3>
+
+				<div class="space-y-4 my-6">
+					<div class="border-l-4 border-[#13B8A6] pl-4">
+						<h4 class="font-semibold text-[#093865]">Essential Cookies</h4>
+						<p class="text-sm text-gray-600">Required for the website to function properly. These cannot be disabled.</p>
+						<p class="text-xs text-gray-500 mt-1">Example: Session management, authentication</p>
+					</div>
+
+					<div class="border-l-4 border-[#90D144] pl-4">
+						<h4 class="font-semibold text-[#093865]">Analytics Cookies</h4>
+						<p class="text-sm text-gray-600">Help us understand how visitors use our website.</p>
+						<p class="text-xs text-gray-500 mt-1">Example: Google Analytics (anonymized)</p>
+					</div>
+
+					<div class="border-l-4 border-blue-500 pl-4">
+						<h4 class="font-semibold text-[#093865]">Functional Cookies</h4>
+						<p class="text-sm text-gray-600">Remember your preferences and settings.</p>
+						<p class="text-xs text-gray-500 mt-1">Example: Language preference, theme selection</p>
+					</div>
+
+					<div class="border-l-4 border-purple-500 pl-4">
+						<h4 class="font-semibold text-[#093865]">Marketing Cookies</h4>
+						<p class="text-sm text-gray-600">Track your browsing to provide relevant advertising (with consent).</p>
+						<p class="text-xs text-gray-500 mt-1">Example: Retargeting ads, social media pixels</p>
+					</div>
+				</div>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">Managing Cookies</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					You can control and manage cookies through:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Your browser settings (most browsers allow you to block or delete cookies)</li>
+					<li>Our cookie consent banner (for non-essential cookies)</li>
+					<li>Opt-out tools provided by advertising networks</li>
+				</ul>
+				<p class="text-gray-600 leading-relaxed mt-4 italic">
+					Note: Disabling certain cookies may affect website functionality.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">Data Retention</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We retain your personal information only as long as necessary for the purposes outlined in this policy:
+				</p>
+
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li><strong>Account Data</strong>: Retained while your account is active, plus 90 days after deletion request</li>
+					<li><strong>Transaction Records</strong>: 7 years (for tax and legal compliance)</li>
+					<li><strong>Support Tickets</strong>: 3 years after ticket closure</li>
+					<li><strong>Analytics Data</strong>: 26 months (Google Analytics default)</li>
+					<li><strong>Marketing Data</strong>: Until you unsubscribe, plus 30 days</li>
+					<li><strong>Plugin Usage Data</strong>: Anonymized after 12 months</li>
+				</ul>
+
+				<p class="text-gray-600 leading-relaxed mt-4">
+					After retention periods expire, we will securely delete or anonymize your information.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">International Data Transfers</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Your information may be transferred to and processed in countries other than your country of residence. These countries may have different data protection laws.
+				</p>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					When we transfer personal information internationally, we ensure appropriate safeguards are in place:
+				</p>
+
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Standard Contractual Clauses (SCCs) approved by the European Commission</li>
+					<li>Data Processing Agreements with service providers</li>
+					<li>Privacy Shield certification (where applicable)</li>
+					<li>Adequacy decisions by relevant authorities</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">Children's Privacy</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					Our services are not intended for children under 16 years of age. We do not knowingly collect personal information from children.
+				</p>
+
+				<p class="text-gray-600 leading-relaxed">
+					If you are a parent or guardian and believe your child has provided us with personal information, please contact us at privacy@wprecurio.com. We will delete such information from our systems.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">Third-Party Links</h2>
+
+				<p class="text-gray-600 leading-relaxed">
+					Our website and plugin may contain links to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to review their privacy policies before providing any personal information.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4 flex items-center gap-2">
+					<span class="inline-flex" set:html={iconSvg('mail', 'w-6 h-6 text-[#13B8A6]')}></span>
+					Email Communications
+				</h2>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">Transactional Emails</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We will send you transactional emails related to:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>Purchase confirmations and receipts</li>
+					<li>License key delivery</li>
+					<li>Account notifications and security alerts</li>
+					<li>Support ticket updates</li>
+					<li>Important plugin updates or security patches</li>
+				</ul>
+				<p class="text-gray-600 leading-relaxed mt-4 italic">
+					You cannot unsubscribe from transactional emails as they are necessary for service delivery.
+				</p>
+
+				<h3 class="text-xl font-semibold text-[#093865] mt-8 mb-3">Marketing Emails</h3>
+				<p class="text-gray-600 leading-relaxed mb-4">
+					With your consent, we may send marketing emails about:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>New features and updates</li>
+					<li>Tips and tutorials</li>
+					<li>Special offers and promotions</li>
+					<li>Newsletter content</li>
+				</ul>
+
+				<div class="bg-gradient-to-r from-[#90D144]/10 to-[#13B8A6]/10 border border-[#13B8A6] p-4 rounded-lg my-6 policy-block">
+					<p class="text-gray-700">
+						<strong>Unsubscribe Anytime:</strong> Every marketing email includes an unsubscribe link. You can also manage your email preferences in your account dashboard or by emailing us at privacy@wprecurio.com.
+					</p>
+				</div>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">Updates to This Privacy Policy</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other factors.
+				</p>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					When we make changes:
+				</p>
+				<ul class="list-disc pl-6 space-y-2 text-gray-600">
+					<li>We will update the "Last Updated" date at the top of this page</li>
+					<li>For material changes, we will notify you via email or through a prominent notice on our website</li>
+					<li>We will provide you with an opportunity to review the changes before they take effect</li>
+				</ul>
+
+				<p class="text-gray-600 leading-relaxed mt-4">
+					We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
+				</p>
+
+				<h2 class="text-2xl font-bold text-[#093865] mt-12 mb-4">Contact Us</h2>
+
+				<p class="text-gray-600 leading-relaxed mb-4">
+					If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
+				</p>
+
+				<div class="bg-gradient-to-br from-[#093865] to-[#13B8A6] text-white p-6 rounded-xl shadow-lg policy-block">
+					<h3 class="font-bold text-xl mb-4">Get in Touch</h3>
+					<div class="space-y-6">
+						<div class="flex items-start gap-3">
+							<span class="inline-flex" set:html={iconSvg('mail', 'w-5 h-5 mt-1 flex-shrink-0')}></span>
+							<div>
+								<h4 class="font-semibold mb-3">Email</h4>
+								<p class="mb-1">privacy@wprecurio.com</p>
+								<p>support@wprecurio.com</p>
+							</div>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="inline-flex" set:html={iconSvg('file-text', 'w-5 h-5 mt-1 flex-shrink-0')}></span>
+							<div>
+								<h4 class="font-semibold mb-3">Website</h4>
+								<p>https://wprecurio.com</p>
+							</div>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="inline-flex" set:html={iconSvg('shield', 'w-5 h-5 mt-1 flex-shrink-0')}></span>
+							<div>
+								<h4 class="font-semibold mb-3">Data Protection Officer</h4>
+								<p>dpo@wprecurio.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="text-gray-600 leading-relaxed mt-6">
+					We are committed to resolving any privacy concerns you may have and will respond to your inquiries within 30 days.
+				</p>
+
+				<div class="bg-gradient-to-r from-[#093865]/5 to-[#13B8A6]/5 border-l-4 border-[#13B8A6] p-6 rounded-lg mt-12 policy-block">
+					<h3 class="font-bold text-[#093865] mb-2">Acknowledgment</h3>
+					<p class="text-gray-700">
+						By using Recurio and our services, you acknowledge that you have read, understood, and agree to this Privacy Policy. If you do not agree with this policy, please discontinue use of our services.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+---
+const { iconSvg } = Astro.props;
+---
+
+<div class="max-w-4xl mx-auto px-6 lg:px-8 -mt-8 mb-8 hidden" data-checkout-error>
+	<div class="bg-red-50 border border-red-200 rounded-xl p-4 flex items-center gap-3">
+		<div class="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold">!</div>
+		<p class="text-sm text-red-700" data-checkout-error-text></p>
+	</div>
+</div>
+
+<div class="max-w-4xl mx-auto px-6 lg:px-8 -mt-8 mb-8 hidden" data-checkout-success>
+	<div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center gap-3">
+		<div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center">
+			<span class="inline-flex" set:html={iconSvg('check', 'w-4 h-4 text-emerald-600')}></span>
+		</div>
+		<p class="text-sm text-emerald-700">
+			Checkout completed successfully. Thank you for choosing Recurio!
+		</p>
+	</div>
+</div>

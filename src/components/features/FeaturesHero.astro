@@ -1,0 +1,75 @@
+---
+const { iconSvg } = Astro.props;
+const stats = [
+	{ label: 'FREE Features', value: '18', icon: 'check' },
+	{ label: 'PRO Features', value: '8', icon: 'lock' },
+	{ label: 'API Endpoints', value: '30+', icon: 'globe' },
+	{ label: 'Email Types', value: '15', icon: 'mail' },
+];
+---
+
+<div
+	data-section
+	id="hero"
+	class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-[#093865] via-[#0B4A7D] to-[#13B8A6]"
+>
+	<div class="absolute inset-0 opacity-10">
+		<div
+			class="absolute inset-0"
+			style="background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 50px 50px;"
+		></div>
+	</div>
+
+	<div class="absolute top-20 right-10 w-96 h-96 bg-[#90D144]/20 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-10 left-10 w-96 h-96 bg-[#13B8A6]/20 rounded-full blur-3xl"></div>
+
+	<div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center max-w-4xl mx-auto">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+				<span class="inline-flex" set:html={iconSvg('zap', 'w-4 h-4 text-[#90D144]')}></span>
+				<span class="text-sm text-white font-semibold">26 POWERFUL FEATURES</span>
+			</div>
+
+			<h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+				Complete Feature Set for
+				<span class="block mt-2 bg-gradient-to-r from-[#90D144] to-[#13B8A6] bg-clip-text text-transparent">
+					Subscription Success
+				</span>
+			</h1>
+
+			<p class="text-xl lg:text-2xl text-white/80 mb-12 leading-relaxed">
+				Everything you need to launch, manage, and scale your subscription business.
+				<span class="block mt-2 font-semibold text-white">
+					18 features FREE forever. 8 premium features to supercharge growth.
+				</span>
+			</p>
+
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+				<button
+					data-scroll="free-features"
+					class="group px-8 py-4 bg-[#90D144] hover:bg-[#7BC135] text-[#093865] font-bold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#90D144]/30 flex items-center justify-center gap-2"
+				>
+					Explore FREE Features
+					<span class="inline-flex" set:html={iconSvg('arrow-right', 'w-5 h-5 group-hover:translate-x-1 transition-transform')}></span>
+				</button>
+				<button
+					data-scroll="pro-features"
+					class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold rounded-full transition-all duration-300 border border-white/20 hover:border-white/40 flex items-center justify-center gap-2"
+				>
+					<span class="inline-flex" set:html={iconSvg('lock', 'w-5 h-5')}></span>
+					View PRO Features
+				</button>
+			</div>
+
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+				{stats.map((stat) => (
+					<div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+						<span class="inline-flex" set:html={iconSvg(stat.icon, 'w-8 h-8 text-[#90D144] mb-3 mx-auto')}></span>
+						<div class="text-3xl font-bold text-white mb-1">{stat.value}</div>
+						<div class="text-sm text-white/70">{stat.label}</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</div>

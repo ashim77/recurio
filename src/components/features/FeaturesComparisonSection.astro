@@ -1,0 +1,139 @@
+---
+const { iconSvg } = Astro.props;
+---
+
+<div
+	data-section
+	id="comparison"
+	class="py-24 bg-white"
+>
+	<div class="max-w-7xl mx-auto px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<h2 class="text-4xl lg:text-5xl font-bold text-[#093865] mb-4">
+				Free vs Pro Comparison
+			</h2>
+			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+				See exactly what's included in each version and choose the plan that fits your business needs.
+			</p>
+		</div>
+
+		<div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl border-2 border-gray-200 overflow-hidden shadow-xl">
+			<div class="overflow-x-auto">
+				<table class="w-full">
+					<thead>
+						<tr class="bg-gradient-to-r from-[#093865] to-[#13B8A6]">
+							<th class="text-left px-8 py-6 text-white font-bold text-lg">Feature Category</th>
+							<th class="px-8 py-6 text-white font-bold text-lg">FREE</th>
+							<th class="px-8 py-6 text-white font-bold text-lg">PRO</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="border-b border-gray-200">
+							<td class="px-8 py-4 font-bold text-[#093865]">Billing Periods</td>
+							<td class="px-8 py-4 text-center">Monthly, Yearly</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">+ Daily, Weekly, Quarterly</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-b border-gray-200 bg-gray-50/50">
+							<td class="px-8 py-4 font-bold text-[#093865]">Payment Retry Attempts</td>
+							<td class="px-8 py-4 text-center">1 attempt</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">2-5 configurable</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-b border-gray-200">
+							<td class="px-8 py-4 font-bold text-[#093865]">Email Notifications</td>
+							<td class="px-8 py-4 text-center">8 transactional</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">+ 7 marketing campaigns</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-b border-gray-200 bg-gray-50/50">
+							<td class="px-8 py-4 font-bold text-[#093865]">Revenue Forecasting</td>
+							<td class="px-8 py-4 text-center">
+								<span class="inline-flex" set:html={iconSvg('x', 'w-5 h-5 text-gray-400 mx-auto')}></span>
+							</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">3, 6, 12 months</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-b border-gray-200">
+							<td class="px-8 py-4 font-bold text-[#093865]">Churn Prediction</td>
+							<td class="px-8 py-4 text-center">
+								<span class="inline-flex" set:html={iconSvg('x', 'w-5 h-5 text-gray-400 mx-auto')}></span>
+							</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">82% accuracy</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-b border-gray-200 bg-gray-50/50">
+							<td class="px-8 py-4 font-bold text-[#093865]">Plan Upgrades/Downgrades</td>
+							<td class="px-8 py-4 text-center">
+								<span class="inline-flex" set:html={iconSvg('x', 'w-5 h-5 text-gray-400 mx-auto')}></span>
+							</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">With proration</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-b border-gray-200">
+							<td class="px-8 py-4 font-bold text-[#093865]">Custom Reports</td>
+							<td class="px-8 py-4 text-center">
+								<span class="inline-flex" set:html={iconSvg('x', 'w-5 h-5 text-gray-400 mx-auto')}></span>
+							</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">Drag-drop builder</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="bg-gray-50/50">
+							<td class="px-8 py-4 font-bold text-[#093865]">Webhooks & Integrations</td>
+							<td class="px-8 py-4 text-center">
+								<span class="inline-flex" set:html={iconSvg('x', 'w-5 h-5 text-gray-400 mx-auto')}></span>
+							</td>
+							<td class="px-8 py-4 text-center">
+								<div class="flex flex-col items-center">
+									<span class="inline-flex" set:html={iconSvg('check', 'w-5 h-5 text-[#90D144] mb-1')}></span>
+									<span class="text-sm">Unlimited webhooks</span>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="bg-gradient-to-r from-[#093865] to-[#13B8A6] p-8 text-center">
+				<h3 class="text-2xl font-bold text-white mb-4">
+					Ready to Upgrade to PRO?
+				</h3>
+				<p class="text-white/80 mb-6 max-w-2xl mx-auto">
+					Get access to all 8 premium features with a 14-day free trial. No credit card required. Cancel anytime.
+				</p>
+				<a href="/pricing" class="px-8 py-4 bg-[#90D144] hover:bg-[#7BC135] text-[#093865] font-bold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#90D144]/30 inline-flex items-center gap-2">
+					Start PRO Trial
+					<span class="inline-flex" set:html={iconSvg('arrow-right', 'w-5 h-5')}></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
