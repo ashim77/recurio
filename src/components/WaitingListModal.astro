@@ -1,0 +1,163 @@
+---
+import waitlistScript from '../scripts/waitlist.js?url';
+
+const iconSvg = (type, className) => {
+	if (type === 'x') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`;
+	}
+	if (type === 'check') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>`;
+	}
+	if (type === 'alert') {
+		return `<svg viewBox="0 0 24 24" class="${className}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>`;
+	}
+	return '';
+};
+---
+
+<div
+	data-waitlist-modal
+	class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+>
+	<div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+		<div class="sticky top-0 bg-gradient-to-r from-[#093865] via-[#0B4A7D] to-[#13B8A6] p-6 rounded-t-2xl">
+			<div class="flex items-center justify-between">
+				<h2 class="text-2xl font-bold text-white">Join Pro Plan Waiting List</h2>
+				<button
+					type="button"
+					data-waitlist-close
+					class="text-white/80 hover:text-white transition-colors p-1 hover:bg-white/10 rounded-lg disabled:opacity-50"
+					aria-label="Close waitlist modal"
+				>
+					<span class="" set:html={iconSvg('x', 'w-6 h-6')}></span>
+				</button>
+			</div>
+			<p class="text-white/90 mt-2 text-sm">
+				Be the first to know when our Pro Plan launches. Get exclusive early access pricing!
+			</p>
+		</div>
+
+		<div class="p-6">
+			<div data-waitlist-status="success" class="hidden text-center py-8">
+				<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="inline-flex" set:html={iconSvg('check', 'w-10 h-10 text-green-600')}></span>
+				</div>
+				<h3 class="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
+				<p class="text-gray-600 mb-6">
+					Thank you for your interest in our Pro Plan. We'll notify you as soon as it launches with exclusive early access pricing.
+				</p>
+				<button
+					type="button"
+					data-waitlist-close
+					class="px-6 py-3 bg-[#90D144] hover:bg-[#7BC135] text-[#093865] font-semibold rounded-full transition-all duration-300 shadow-lg"
+				>
+					Close
+				</button>
+			</div>
+
+			<div data-waitlist-status="duplicate" class="hidden text-center py-8">
+				<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="inline-flex" set:html={iconSvg('check', 'w-10 h-10 text-blue-600')}></span>
+				</div>
+				<h3 class="text-2xl font-bold text-gray-900 mb-2">You're already on the list!</h3>
+				<p class="text-gray-600 mb-6">
+					We already have your email address. We'll notify you as soon as the Pro Plan launches.
+				</p>
+				<button
+					type="button"
+					data-waitlist-close
+					class="px-6 py-3 bg-[#90D144] hover:bg-[#7BC135] text-[#093865] font-semibold rounded-full transition-all duration-300 shadow-lg"
+				>
+					Close
+				</button>
+			</div>
+
+			<form data-waitlist-form class="space-y-5">
+				<div>
+					<label for="waitlist-fullName" class="block text-sm font-semibold text-gray-700 mb-2">
+						Full Name <span class="text-red-500">*</span>
+					</label>
+					<input
+						type="text"
+						id="waitlist-fullName"
+						required
+						class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#13B8A6] focus:border-transparent outline-none transition-all"
+						placeholder="John Doe"
+					/>
+				</div>
+
+				<div>
+					<label for="waitlist-email" class="block text-sm font-semibold text-gray-700 mb-2">
+						Email Address <span class="text-red-500">*</span>
+					</label>
+					<input
+						type="email"
+						id="waitlist-email"
+						required
+						class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#13B8A6] focus:border-transparent outline-none transition-all"
+						placeholder="john@example.com"
+					/>
+					<p data-waitlist-email-error class="hidden text-red-500 text-sm mt-1 flex items-center gap-1">
+						<span class="inline-flex" set:html={iconSvg('alert', 'w-4 h-4')}></span>
+						<span></span>
+					</p>
+				</div>
+
+				<div>
+					<label for="waitlist-company" class="block text-sm font-semibold text-gray-700 mb-2">
+						Company Name <span class="text-gray-400 text-xs">(Optional)</span>
+					</label>
+					<input
+						type="text"
+						id="waitlist-company"
+						class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#13B8A6] focus:border-transparent outline-none transition-all"
+						placeholder="Your Company"
+					/>
+				</div>
+
+				<div>
+					<label for="waitlist-comments" class="block text-sm font-semibold text-gray-700 mb-2">
+						Comments or Requirements <span class="text-gray-400 text-xs">(Optional)</span>
+					</label>
+					<textarea
+						id="waitlist-comments"
+						rows="3"
+						class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#13B8A6] focus:border-transparent outline-none transition-all resize-none"
+						placeholder="Tell us what features you're most interested in..."
+					></textarea>
+				</div>
+
+				<div data-waitlist-error class="hidden bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
+					<span class="inline-flex" set:html={iconSvg('alert', 'w-5 h-5 text-red-600 flex-shrink-0 mt-0.5')}></span>
+					<div>
+						<p class="text-red-800 font-semibold text-sm">Submission Failed</p>
+						<p class="text-red-700 text-sm mt-1" data-waitlist-error-text></p>
+					</div>
+				</div>
+
+				<div class="flex gap-3 pt-2">
+					<button
+						type="button"
+						data-waitlist-cancel
+						class="flex-1 px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-gray-50 transition-all duration-300 disabled:opacity-50"
+					>
+						Cancel
+					</button>
+					<button
+						type="submit"
+						data-waitlist-submit
+						class="flex-1 px-6 py-3 bg-[#90D144] hover:bg-[#7BC135] text-[#093865] font-semibold rounded-full transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+					>
+						<span data-waitlist-submit-label>Join Waiting List</span>
+						<span data-waitlist-submit-loading class="hidden items-center gap-2">
+							<span class="w-5 h-5 border-2 border-[#093865] border-t-transparent rounded-full animate-spin"></span>
+							Submitting...
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script type="module" src={waitlistScript}></script>
