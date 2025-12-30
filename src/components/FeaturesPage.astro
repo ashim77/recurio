@@ -1270,6 +1270,7 @@ const proFeatures = [
 					card.classList.toggle('is-expanded', !isOpen);
 					if (details) {
 						details.classList.toggle('is-open', !isOpen);
+						details.classList.toggle('hidden', isOpen);
 					}
 					if (label) {
 						const defaultLabel = btn.getAttribute('data-expand-default') || 'Learn More';

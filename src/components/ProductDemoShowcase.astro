@@ -88,8 +88,8 @@ const iconSvg = (type, className) => {
 				{steps.map((step, idx) => (
 					<div class="relative">
 						<div
-							class="demo-card relative group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 h-full"
-							style={`transition-delay: ${idx * 150}ms;`}
+							class="demo-card relative group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-700 ease-out hover:-translate-y-2 border border-gray-100 h-full"
+							style={`--demo-delay: ${idx * 150}ms;`}
 							data-delay={idx * 150}
 						>
 							<div
@@ -102,8 +102,8 @@ const iconSvg = (type, className) => {
 									<div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#90D144] to-[#13B8A6] flex items-center justify-center text-white font-bold shadow-lg">
 										{idx + 1}
 									</div>
-									<div class={`flex-shrink-0 w-12 h-12 rounded-xl ${step.iconBg} flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm group-hover:shadow-lg`}>
-										<span class="inline-flex" set:html={iconSvg(step.icon, `w-6 h-6 ${step.iconColor} group-hover:text-[#90D144] transition-colors duration-500`)}></span>
+									<div class={`flex-shrink-0 w-12 h-12 rounded-xl ${step.iconBg} flex items-center justify-center group-hover:scale-110 transition-all duration-700 ease-out shadow-sm group-hover:shadow-lg`}>
+										<span class="inline-flex" set:html={iconSvg(step.icon, `w-6 h-6 ${step.iconColor} group-hover:text-[#90D144] transition-colors duration-700 ease-out`)}></span>
 									</div>
 								</div>
 
@@ -215,8 +215,8 @@ const iconSvg = (type, className) => {
 										</div>
 									)}
 
-									<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/mockup:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center transform scale-90 group-hover/mockup:scale-100 transition-transform duration-300">
+									<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/mockup:opacity-100 transition-opacity duration-700 ease-out flex items-center justify-center">
+										<div class="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center transform scale-90 group-hover/mockup:scale-100 transition-transform duration-700 ease-out">
 											<svg viewBox="0 0 24 24" class="w-6 h-6 text-[#093865] ml-1" fill="currentColor" aria-hidden="true">
 												<polygon points="5 3 19 12 5 21 5 3"></polygon>
 											</svg>
@@ -270,12 +270,18 @@ const iconSvg = (type, className) => {
 		.demo-card {
 			opacity: 0;
 			transform: translateY(48px);
-			transition: opacity 700ms ease, transform 700ms ease;
+			transition: opacity 700ms ease, transform 700ms ease, box-shadow 700ms ease, border-color 700ms ease;
+			transition-delay: var(--demo-delay, 0ms);
+			will-change: transform, box-shadow;
 		}
 
 		[data-demo-section].is-visible .demo-card {
 			opacity: 1;
 			transform: translateY(0);
+		}
+
+		.demo-card:hover {
+			transition-delay: 0ms;
 		}
 
 		@keyframes progress {
