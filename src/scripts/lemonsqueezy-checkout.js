@@ -9,11 +9,12 @@ const successBox = page.querySelector('[data-checkout-success]');
 const buttons = page.querySelectorAll('[data-checkout]');
 const faqButtons = page.querySelectorAll('[data-faq-button]');
 
-const rawStoreId = import.meta.env.VITE_LEMONSQUEEZY_STORE_ID || '';
+const rawStoreId = import.meta.env.PUBLIC_LEMONSQUEEZY_STORE_ID || '';
+
 const variants = {
-  starter: import.meta.env.VITE_LEMONSQUEEZY_STARTER_VARIANT_ID || '',
-  professional: import.meta.env.VITE_LEMONSQUEEZY_PROFESSIONAL_VARIANT_ID || '',
-  agency: import.meta.env.VITE_LEMONSQUEEZY_AGENCY_VARIANT_ID || '',
+  starter: import.meta.env.PUBLIC_LEMONSQUEEZY_STARTER_VARIANT_ID || '',
+  professional: import.meta.env.PUBLIC_LEMONSQUEEZY_PROFESSIONAL_VARIANT_ID || '',
+  agency: import.meta.env.PUBLIC_LEMONSQUEEZY_AGENCY_VARIANT_ID || '',
 };
 
 const extractStoreId = (storeIdOrUrl) => {
